@@ -20,6 +20,7 @@
 		EC0465981713BB84001B39B2 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0465971713BB84001B39B2 /* FlipsideViewController.m */; };
 		EC04659B1713BB84001B39B2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0465991713BB84001B39B2 /* MainViewController.xib */; };
 		EC04659E1713BB84001B39B2 /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */; };
+		ECEFED6F1713E7BF00335E9E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEFED6E1713E7BF00335E9E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		EC0465971713BB84001B39B2 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		EC04659A1713BB84001B39B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
 		EC04659D1713BB84001B39B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
+		ECEFED6E1713E7BF00335E9E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECEFED6F1713E7BF00335E9E /* QuartzCore.framework in Frameworks */,
 				EC04657C1713BB84001B39B2 /* UIKit.framework in Frameworks */,
 				EC04657E1713BB84001B39B2 /* Foundation.framework in Frameworks */,
 				EC0465801713BB84001B39B2 /* CoreGraphics.framework in Frameworks */,
@@ -61,6 +64,7 @@
 		EC04656F1713BB84001B39B2 = {
 			isa = PBXGroup;
 			children = (
+				ECEFED6E1713E7BF00335E9E /* QuartzCore.framework */,
 				EC0465811713BB84001B39B2 /* DoItEveryDay */,
 				EC04657A1713BB84001B39B2 /* Frameworks */,
 				EC0465791713BB84001B39B2 /* Products */,
@@ -316,6 +320,7 @@
 				EC0465A31713BB84001B39B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
