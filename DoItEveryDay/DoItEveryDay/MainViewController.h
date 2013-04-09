@@ -7,8 +7,13 @@
 //
 
 #import "FlipsideViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0f]
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
+
+@property (nonatomic, retain) CAGradientLayer *gradient;
 
 - (IBAction)showInfo:(id)sender;
 
