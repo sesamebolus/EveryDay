@@ -17,4 +17,6 @@
 
 - (IBAction)showInfo:(id)sender;
 
+- (void)drawGradientLayer;
+
 @end

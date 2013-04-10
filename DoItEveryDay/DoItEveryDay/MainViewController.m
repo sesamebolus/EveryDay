@@ -20,10 +20,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)drawGradientLayer
 {
-    [super viewWillAppear:animated];
-    
     NSArray *colorArray = [NSArray arrayWithObjects:
                            RGBCOLOR(0, 0, 0),
                            RGBCOLOR(76, 16, 0),
@@ -37,6 +35,7 @@
                            RGBCOLOR(41, 87, 207),
                            RGBCOLOR(82, 54, 99),
                            RGBCOLOR(64, 34, 82),
+                           RGBCOLOR(37, 37, 37),
                            nil];
     
     // get current time
