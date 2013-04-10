@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) CAGradientLayer *gradient;
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *clickButton;
 
 - (IBAction)showInfo:(id)sender;
 

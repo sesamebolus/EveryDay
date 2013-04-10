@@ -18,6 +18,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self.clickButton setBackgroundColor:[UIColor blackColor]];
+    [self.clickButton.layer setCornerRadius:80.0f];
 }
 
 - (void)drawGradientLayer
