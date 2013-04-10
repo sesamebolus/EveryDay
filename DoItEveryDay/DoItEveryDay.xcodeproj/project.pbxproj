@@ -20,11 +20,21 @@
 		EC0465981713BB84001B39B2 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0465971713BB84001B39B2 /* FlipsideViewController.m */; };
 		EC04659B1713BB84001B39B2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0465991713BB84001B39B2 /* MainViewController.xib */; };
 		EC04659E1713BB84001B39B2 /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */; };
+		EC9FCB1A171557E4008CD7E9 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB10171557E3008CD7E9 /* Icon-72.png */; };
+		EC9FCB1B171557E4008CD7E9 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB11171557E3008CD7E9 /* Icon-72@2x.png */; };
+		EC9FCB1C171557E4008CD7E9 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB12171557E3008CD7E9 /* Icon-Small-50.png */; };
+		EC9FCB1D171557E4008CD7E9 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB13171557E3008CD7E9 /* Icon-Small-50@2x.png */; };
+		EC9FCB1E171557E4008CD7E9 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB14171557E3008CD7E9 /* Icon-Small.png */; };
+		EC9FCB1F171557E4008CD7E9 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB15171557E3008CD7E9 /* Icon-Small@2x.png */; };
+		EC9FCB20171557E4008CD7E9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB16171557E3008CD7E9 /* Icon.png */; };
+		EC9FCB21171557E4008CD7E9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB17171557E3008CD7E9 /* Icon@2x.png */; };
+		EC9FCB22171557E4008CD7E9 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB18171557E3008CD7E9 /* iTunesArtwork.png */; };
+		EC9FCB23171557E4008CD7E9 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB19171557E4008CD7E9 /* iTunesArtwork@2x.png */; };
 		ECEFED6F1713E7BF00335E9E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEFED6E1713E7BF00335E9E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC0465781713BB84001B39B2 /* DoItEveryDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoItEveryDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0465781713BB84001B39B2 /* 一件事.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "一件事.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC04657B1713BB84001B39B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EC04657D1713BB84001B39B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC04657F1713BB84001B39B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -43,6 +53,16 @@
 		EC0465971713BB84001B39B2 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		EC04659A1713BB84001B39B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
 		EC04659D1713BB84001B39B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
+		EC9FCB10171557E3008CD7E9 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		EC9FCB11171557E3008CD7E9 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		EC9FCB12171557E3008CD7E9 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		EC9FCB13171557E3008CD7E9 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		EC9FCB14171557E3008CD7E9 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		EC9FCB15171557E3008CD7E9 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		EC9FCB16171557E3008CD7E9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		EC9FCB17171557E3008CD7E9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		EC9FCB18171557E3008CD7E9 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		EC9FCB19171557E4008CD7E9 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		ECEFED6E1713E7BF00335E9E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -74,7 +94,7 @@
 		EC0465791713BB84001B39B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC0465781713BB84001B39B2 /* DoItEveryDay.app */,
+				EC0465781713BB84001B39B2 /* 一件事.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +112,7 @@
 		EC0465811713BB84001B39B2 /* DoItEveryDay */ = {
 			isa = PBXGroup;
 			children = (
+				EC9FCB24171557E9008CD7E9 /* Resources */,
 				EC04658A1713BB84001B39B2 /* AppDelegate.h */,
 				EC04658B1713BB84001B39B2 /* AppDelegate.m */,
 				EC0465931713BB84001B39B2 /* MainViewController.h */,
@@ -119,6 +140,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EC9FCB24171557E9008CD7E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EC9FCB10171557E3008CD7E9 /* Icon-72.png */,
+				EC9FCB11171557E3008CD7E9 /* Icon-72@2x.png */,
+				EC9FCB12171557E3008CD7E9 /* Icon-Small-50.png */,
+				EC9FCB13171557E3008CD7E9 /* Icon-Small-50@2x.png */,
+				EC9FCB14171557E3008CD7E9 /* Icon-Small.png */,
+				EC9FCB15171557E3008CD7E9 /* Icon-Small@2x.png */,
+				EC9FCB16171557E3008CD7E9 /* Icon.png */,
+				EC9FCB17171557E3008CD7E9 /* Icon@2x.png */,
+				EC9FCB18171557E3008CD7E9 /* iTunesArtwork.png */,
+				EC9FCB19171557E4008CD7E9 /* iTunesArtwork@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,7 +174,7 @@
 			);
 			name = DoItEveryDay;
 			productName = DoItEveryDay;
-			productReference = EC0465781713BB84001B39B2 /* DoItEveryDay.app */;
+			productReference = EC0465781713BB84001B39B2 /* 一件事.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -176,6 +214,16 @@
 				EC0465921713BB84001B39B2 /* Default-568h@2x.png in Resources */,
 				EC04659B1713BB84001B39B2 /* MainViewController.xib in Resources */,
 				EC04659E1713BB84001B39B2 /* FlipsideViewController.xib in Resources */,
+				EC9FCB1A171557E4008CD7E9 /* Icon-72.png in Resources */,
+				EC9FCB1B171557E4008CD7E9 /* Icon-72@2x.png in Resources */,
+				EC9FCB1C171557E4008CD7E9 /* Icon-Small-50.png in Resources */,
+				EC9FCB1D171557E4008CD7E9 /* Icon-Small-50@2x.png in Resources */,
+				EC9FCB1E171557E4008CD7E9 /* Icon-Small.png in Resources */,
+				EC9FCB1F171557E4008CD7E9 /* Icon-Small@2x.png in Resources */,
+				EC9FCB20171557E4008CD7E9 /* Icon.png in Resources */,
+				EC9FCB21171557E4008CD7E9 /* Icon@2x.png in Resources */,
+				EC9FCB22171557E4008CD7E9 /* iTunesArtwork.png in Resources */,
+				EC9FCB23171557E4008CD7E9 /* iTunesArtwork@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +334,7 @@
 				GCC_PREFIX_HEADER = "DoItEveryDay/DoItEveryDay-Prefix.pch";
 				INFOPLIST_FILE = "DoItEveryDay/DoItEveryDay-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "一件事";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -298,7 +346,7 @@
 				GCC_PREFIX_HEADER = "DoItEveryDay/DoItEveryDay-Prefix.pch";
 				INFOPLIST_FILE = "DoItEveryDay/DoItEveryDay-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "一件事";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
