@@ -58,7 +58,7 @@
                            [NSNumber numberWithFloat:0.0f],
                            [NSNumber numberWithFloat:0.7],
                            nil];
-    [self.view.layer addSublayer:self.gradient];
+    [self.backgroundView.layer addSublayer:self.gradient];
 }
 
 - (void)didReceiveMemoryWarning

@@ -14,6 +14,7 @@
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
 
 @property (nonatomic, retain) CAGradientLayer *gradient;
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
 
 - (IBAction)showInfo:(id)sender;
 
