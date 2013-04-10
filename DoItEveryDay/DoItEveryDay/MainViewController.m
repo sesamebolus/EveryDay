@@ -64,6 +64,21 @@
     [self.backgroundView.layer addSublayer:self.gradient];
 }
 
+- (IBAction)submitButton:(id)sender
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDuration:0.2];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [self.clickButton setFrame:CGRectMake(
+                                          ((UIView *)sender).frame.origin.x,
+                                          ((UIView *)sender).frame.origin.y + ((UIView *)sender).frame.size.height / 2,
+                                          ((UIView *)sender).frame.size.width,
+                                          ((UIView *)sender).frame.size.height
+                                          )];
+    [UIView commitAnimations];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

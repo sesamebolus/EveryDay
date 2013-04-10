@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *clickButton;
 
 - (IBAction)showInfo:(id)sender;
+- (IBAction)submitButton:(id)sender;
 
 - (void)drawGradientLayer;
 
