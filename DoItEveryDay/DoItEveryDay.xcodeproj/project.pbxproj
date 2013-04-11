@@ -30,6 +30,8 @@
 		EC9FCB21171557E4008CD7E9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB17171557E3008CD7E9 /* Icon@2x.png */; };
 		EC9FCB22171557E4008CD7E9 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB18171557E3008CD7E9 /* iTunesArtwork.png */; };
 		EC9FCB23171557E4008CD7E9 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB19171557E4008CD7E9 /* iTunesArtwork@2x.png */; };
+		ECE533A017169F88004414B1 /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE5339E17169F88004414B1 /* list@2x.png */; };
+		ECE533A117169F88004414B1 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE5339F17169F88004414B1 /* tick@2x.png */; };
 		ECEFED6F1713E7BF00335E9E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEFED6E1713E7BF00335E9E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		EC9FCB17171557E3008CD7E9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		EC9FCB18171557E3008CD7E9 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		EC9FCB19171557E4008CD7E9 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		ECE5339E17169F88004414B1 /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "list@2x.png"; path = "Resources/list@2x.png"; sourceTree = "<group>"; };
+		ECE5339F17169F88004414B1 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tick@2x.png"; path = "Resources/tick@2x.png"; sourceTree = "<group>"; };
 		ECEFED6E1713E7BF00335E9E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -143,6 +147,8 @@
 		EC9FCB24171557E9008CD7E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ECE5339E17169F88004414B1 /* list@2x.png */,
+				ECE5339F17169F88004414B1 /* tick@2x.png */,
 				EC9FCB10171557E3008CD7E9 /* Icon-72.png */,
 				EC9FCB11171557E3008CD7E9 /* Icon-72@2x.png */,
 				EC9FCB12171557E3008CD7E9 /* Icon-Small-50.png */,
@@ -224,6 +230,8 @@
 				EC9FCB21171557E4008CD7E9 /* Icon@2x.png in Resources */,
 				EC9FCB22171557E4008CD7E9 /* iTunesArtwork.png in Resources */,
 				EC9FCB23171557E4008CD7E9 /* iTunesArtwork@2x.png in Resources */,
+				ECE533A017169F88004414B1 /* list@2x.png in Resources */,
+				ECE533A117169F88004414B1 /* tick@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

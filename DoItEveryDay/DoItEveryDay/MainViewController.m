@@ -21,6 +21,8 @@
     
     [self.clickButton setBackgroundColor:[UIColor blackColor]];
     [self.clickButton.layer setCornerRadius:80.0f];
+    
+    [self.textLabel setText:@"你今天运动了吗？"];
 }
 
 - (void)drawGradientLayer
@@ -66,17 +68,39 @@
 
 - (IBAction)submitButton:(id)sender
 {
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDuration:0.2];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [self.clickButton setFrame:CGRectMake(
-                                          ((UIView *)sender).frame.origin.x,
-                                          ((UIView *)sender).frame.origin.y + ((UIView *)sender).frame.size.height / 2,
-                                          ((UIView *)sender).frame.size.width,
-                                          ((UIView *)sender).frame.size.height
-                                          )];
-    [UIView commitAnimations];
+    [self.textLabel setText:@"很好，继续加油！"];
+    
+    [UIView animateWithDuration:0.2
+                          delay:0
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [self.clickButton setFrame:CGRectMake(
+                                                               self.clickButton.frame.origin.x,
+                                                               self.clickButton.frame.origin.y + self.clickButton.frame.size.height / 2,
+                                                               self.clickButton.frame.size.width,
+                                                               self.clickButton.frame.size.height
+                          )];
+                     }
+                     completion:^(BOOL finished){
+                         [self.clickButton removeFromSuperview];
+                         [self animationFinished];
+                     }];
+}
+
+- (void)animationFinished
+{
+    [self.tickImage setAlpha:0.0f];
+    [self.tickImage setHidden:NO];
+    
+    
+    [UIView animateWithDuration:0.2
+                          delay:0
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [self.tickImage setAlpha:1.0f];
+                     } 
+                     completion:^(BOOL finished){
+                     }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,4 +124,9 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 
+- (void)viewDidUnload {
+    [self setTextLabel:nil];
+    [self setTickImage:nil];
+    [super viewDidUnload];
+}
 @end

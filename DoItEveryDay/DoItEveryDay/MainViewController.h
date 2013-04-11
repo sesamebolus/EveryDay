@@ -14,8 +14,10 @@
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
 
 @property (nonatomic, retain) CAGradientLayer *gradient;
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *clickButton;
+@property (weak, nonatomic) IBOutlet UIImageView *tickImage;
 
 - (IBAction)showInfo:(id)sender;
 - (IBAction)submitButton:(id)sender;
