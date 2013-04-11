@@ -26,19 +26,19 @@
 - (void)drawGradientLayer
 {
     NSArray *colorArray = [NSArray arrayWithObjects:
-                           RGBCOLOR(0, 0, 0),
-                           RGBCOLOR(76, 16, 0),
-                           RGBCOLOR(141, 29, 0),
-                           RGBCOLOR(255, 46, 1),
-                           RGBCOLOR(255, 115, 5),
-                           RGBCOLOR(255, 213, 5),
-                           RGBCOLOR(127, 210, 226),
-                           RGBCOLOR(90, 178, 209),
-                           RGBCOLOR(83, 141, 210),
-                           RGBCOLOR(41, 87, 207),
-                           RGBCOLOR(82, 54, 99),
-                           RGBCOLOR(64, 34, 82),
-                           RGBCOLOR(37, 37, 37),
+                           RGBCOLOR(35, 46, 102), // 0:00-1:00
+                           RGBCOLOR(83, 53, 124), // 2:00-3:00
+                           RGBCOLOR(156, 48, 92), // 4:00-5:00
+                           RGBCOLOR(255, 46, 1), // 6:00-7:00
+                           RGBCOLOR(255, 103, 52), // 8:00-9:00
+                           RGBCOLOR(255, 205, 85), // 10:00-11:00
+                           RGBCOLOR(116, 232, 255), // 12:00-13:00
+                           RGBCOLOR(4, 203, 255), // 14:00-15:00
+                           RGBCOLOR(0, 189, 255), // 16:00-17:00
+                           RGBCOLOR(0, 156, 255), // 18:00-19:00
+                           RGBCOLOR(41, 87, 207), // 20:00-21:00
+                           RGBCOLOR(81, 45, 158), // 22:00-23:00
+                           RGBCOLOR(35, 14, 105), // 24:00-00:00
                            nil];
     
     // get current time
