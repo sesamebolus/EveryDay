@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "FMDatabase.h"
 
 @interface MainViewController ()
 
@@ -23,6 +24,35 @@
     [self.clickButton.layer setCornerRadius:80.0f];
     
     [self.textLabel setText:@"你今天运动了吗？"];
+    
+    // setup and open SQLite database
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsPath = [paths objectAtIndex:0];
+    NSString *path = [docsPath stringByAppendingPathComponent:@"database.sqlite"];
+    
+    self.database = [FMDatabase databaseWithPath:path];
+    
+    if (![self.database open]) {
+        NSLog(@"Could not open db.");
+        return;
+    }
+    [self.database executeUpdate:@"create table log(date date primary key)"];
+    
+    // read the latest record from database
+    FMResultSet *results = [self.database executeQuery:@"select * from log where rowid = (select max(rowid) from log)"];
+    while([results next]) { 
+        NSDateComponents *lastDay = [[NSCalendar currentCalendar]
+                                      components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                      fromDate:[results dateForColumn:@"date"]];
+        NSDateComponents *today = [[NSCalendar currentCalendar]
+                                   components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                   fromDate:[NSDate date]];
+        if([today day] == [lastDay day] && [today month] == [lastDay month] && [today year] == [lastDay year] && [today era] == [lastDay era]) {
+            NSLog(@"You have finished it today!");
+            [self endingAnimation];
+        }
+    }
+    [results close];
 }
 
 - (void)drawGradientLayer
@@ -68,6 +98,20 @@
 
 - (IBAction)submitButton:(id)sender
 {
+    [self endingAnimation];
+        
+    // insert a record to database
+    NSDate *today = [NSDate date];
+    [self.database executeUpdate:@"insert into log(date) values(?)", today, nil];
+    
+    // close database
+    [self.database close];
+}
+
+#pragma mark - Ending Animation
+
+- (void)endingAnimation
+{
     [self.textLabel setText:@"很好，继续加油！"];
     
     [UIView animateWithDuration:0.2
@@ -79,7 +123,7 @@
                                                                self.clickButton.frame.origin.y + self.clickButton.frame.size.height / 2,
                                                                self.clickButton.frame.size.width,
                                                                self.clickButton.frame.size.height
-                          )];
+                                                               )];
                      }
                      completion:^(BOOL finished){
                          [self.clickButton removeFromSuperview];
