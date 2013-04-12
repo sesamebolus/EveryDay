@@ -14,9 +14,11 @@
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
 @end
 
-@interface FlipsideViewController : UIViewController
+@interface FlipsideViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) id <FlipsideViewControllerDelegate> delegate;
+
+@property (nonatomic, retain) NSMutableArray *dataArray;
 
 - (IBAction)done:(id)sender;
 
