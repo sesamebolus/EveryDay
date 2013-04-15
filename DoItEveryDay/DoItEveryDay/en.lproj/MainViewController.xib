@@ -89,7 +89,7 @@
 					<object class="IBUIButton" id="558454645">
 						<reference key="NSNextResponder" ref="883825266"/>
 						<int key="NSvFlags">289</int>
-						<string key="NSFrame">{{268, 20}, {32, 32}}</string>
+						<string key="NSFrame">{{268, 8}, {44, 44}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="911872890"/>
@@ -393,7 +393,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="list@2x.png">{64, 64}</string>
+			<string key="list@2x.png">{88, 88}</string>
 			<string key="tick@2x.png">{200, 168}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>

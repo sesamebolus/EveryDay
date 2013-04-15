@@ -20,6 +20,7 @@
 		EC0465981713BB84001B39B2 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0465971713BB84001B39B2 /* FlipsideViewController.m */; };
 		EC04659B1713BB84001B39B2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0465991713BB84001B39B2 /* MainViewController.xib */; };
 		EC04659E1713BB84001B39B2 /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */; };
+		EC7BCA87171B986F00602364 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7BCA86171B986F00602364 /* backButton@2x.png */; };
 		EC9FCB1A171557E4008CD7E9 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB10171557E3008CD7E9 /* Icon-72.png */; };
 		EC9FCB1B171557E4008CD7E9 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB11171557E3008CD7E9 /* Icon-72@2x.png */; };
 		EC9FCB1C171557E4008CD7E9 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9FCB12171557E3008CD7E9 /* Icon-Small-50.png */; };
@@ -61,6 +62,7 @@
 		EC0465971713BB84001B39B2 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		EC04659A1713BB84001B39B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
 		EC04659D1713BB84001B39B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
+		EC7BCA86171B986F00602364 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backButton@2x.png"; path = "Resources/backButton@2x.png"; sourceTree = "<group>"; };
 		EC9FCB10171557E3008CD7E9 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		EC9FCB11171557E3008CD7E9 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		EC9FCB12171557E3008CD7E9 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		EC9FCB24171557E9008CD7E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EC7BCA86171B986F00602364 /* backButton@2x.png */,
 				ECE5339E17169F88004414B1 /* list@2x.png */,
 				ECE5339F17169F88004414B1 /* tick@2x.png */,
 				EC9FCB10171557E3008CD7E9 /* Icon-72.png */,
@@ -269,6 +272,7 @@
 				EC9FCB23171557E4008CD7E9 /* iTunesArtwork@2x.png in Resources */,
 				ECE533A017169F88004414B1 /* list@2x.png in Resources */,
 				ECE533A117169F88004414B1 /* tick@2x.png in Resources */,
+				EC7BCA87171B986F00602364 /* backButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
