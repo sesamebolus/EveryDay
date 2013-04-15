@@ -40,7 +40,7 @@
     
     // read database
     self.dataArray = [[NSMutableArray alloc] init];
-    FMResultSet *results = [database executeQuery:@"select * from log order by date desc limit 7"];
+    FMResultSet *results = [database executeQuery:@"select * from log order by date desc limit 30"];
     while([results next]) {
         NSDate *targetDate = [results dateForColumn:@"date"];
         [self.dataArray addObject:targetDate];
@@ -78,11 +78,11 @@
     }
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
     [cell.textLabel setText:
         [[NSString alloc] initWithFormat:@"%@", [dateFormat stringFromDate: [self.dataArray objectAtIndex:indexPath.row]]]
     ];
-    [cell.textLabel setFont:[UIFont systemFontOfSize:18]];
+    [cell.textLabel setFont:[UIFont systemFontOfSize:15]];
     return cell;
 }
 
