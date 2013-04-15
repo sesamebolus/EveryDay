@@ -42,7 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC0465781713BB84001B39B2 /* 每天一件事.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "每天一件事.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0465781713BB84001B39B2 /* everyday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = everyday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC04657B1713BB84001B39B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EC04657D1713BB84001B39B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC04657F1713BB84001B39B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,7 +117,7 @@
 		EC0465791713BB84001B39B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC0465781713BB84001B39B2 /* 每天一件事.app */,
+				EC0465781713BB84001B39B2 /* everyday.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 			);
 			name = DoItEveryDay;
 			productName = DoItEveryDay;
-			productReference = EC0465781713BB84001B39B2 /* 每天一件事.app */;
+			productReference = EC0465781713BB84001B39B2 /* everyday.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -384,7 +384,7 @@
 				GCC_PREFIX_HEADER = "DoItEveryDay/DoItEveryDay-Prefix.pch";
 				INFOPLIST_FILE = "DoItEveryDay/DoItEveryDay-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "每天一件事";
+				PRODUCT_NAME = everyday;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -396,7 +396,7 @@
 				GCC_PREFIX_HEADER = "DoItEveryDay/DoItEveryDay-Prefix.pch";
 				INFOPLIST_FILE = "DoItEveryDay/DoItEveryDay-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "每天一件事";
+				PRODUCT_NAME = everyday;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
