@@ -25,5 +25,6 @@
 - (IBAction)submitButton:(id)sender;
 
 - (void)drawGradientLayer;
+- (void)updateStatus;
 
 @end

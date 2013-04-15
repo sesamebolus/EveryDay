@@ -22,9 +22,10 @@
     
     [self.clickButton setBackgroundColor:[UIColor blackColor]];
     [self.clickButton.layer setCornerRadius:80.0f];
-    
-    [self.textLabel setText:@"你今天运动了吗？"];
-    
+}
+
+- (void)updateStatus
+{
     // setup and open SQLite database
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docsPath = [paths objectAtIndex:0];
@@ -40,16 +41,18 @@
     
     // read the latest record from database
     FMResultSet *results = [self.database executeQuery:@"select * from log where rowid = (select max(rowid) from log)"];
-    while([results next]) { 
+    while([results next]) {
         NSDateComponents *lastDay = [[NSCalendar currentCalendar]
-                                      components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
-                                      fromDate:[results dateForColumn:@"date"]];
+                                     components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                     fromDate:[results dateForColumn:@"date"]];
         NSDateComponents *today = [[NSCalendar currentCalendar]
                                    components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
                                    fromDate:[NSDate date]];
         if([today day] == [lastDay day] && [today month] == [lastDay month] && [today year] == [lastDay year] && [today era] == [lastDay era]) {
             NSLog(@"You have finished it today!");
             [self endingAnimation];
+        } else {
+            [self.textLabel setText:@"你今天运动了吗？"];
         }
     }
     [results close];
