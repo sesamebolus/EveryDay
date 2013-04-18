@@ -167,7 +167,20 @@
 {    
     FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideViewController" bundle:nil];
     controller.delegate = self;
-    controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)GoalViewControllerDidFinish:(GoalViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)showGoal:(id)sender
+{
+    GoalViewController *controller = [[GoalViewController alloc] initWithNibName:@"GoalViewController" bundle:nil];
+    controller.delegate = self;
+    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:controller animated:YES completion:nil];
 }
 

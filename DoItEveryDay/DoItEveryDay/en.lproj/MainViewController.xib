@@ -43,7 +43,7 @@
 						<string key="NSFrameSize">{320, 480}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="558454645"/>
+						<reference key="NSNextKeyView" ref="188059510"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -100,7 +100,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<bool key="IBUIShowsTouchWhenHighlighted">YES</bool>
-						<object class="NSColor" key="IBUIHighlightedTitleColor">
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="590636780">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
 						</object>
@@ -108,7 +108,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<object class="NSColor" key="IBUINormalTitleShadowColor">
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="887984446">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MAA</bytes>
 						</object>
@@ -116,17 +116,44 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">list@2x.png</string>
 						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription">
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="186354073">
 							<string key="name">Helvetica-Bold</string>
 							<string key="family">Helvetica</string>
 							<int key="traits">2</int>
 							<double key="pointSize">15</double>
 						</object>
-						<object class="NSFont" key="IBUIFont">
+						<object class="NSFont" key="IBUIFont" id="172401482">
 							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
 						</object>
+					</object>
+					<object class="IBUIButton" id="188059510">
+						<reference key="NSNextResponder" ref="883825266"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{268, 52}, {44, 44}}</string>
+						<reference key="NSSuperview" ref="883825266"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="558454645"/>
+						<string key="NSHuggingPriority">{250, 250}</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<bool key="IBUIShowsTouchWhenHighlighted">YES</bool>
+						<reference key="IBUIHighlightedTitleColor" ref="590636780"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="887984446"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">goal@2x.png</string>
+						</object>
+						<reference key="IBUIFontDescription" ref="186354073"/>
+						<reference key="IBUIFont" ref="172401482"/>
 					</object>
 					<object class="IBUIImageView" id="327270817">
 						<reference key="NSNextResponder" ref="883825266"/>
@@ -253,6 +280,15 @@
 					</object>
 					<int key="connectionID">91</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">showGoal:</string>
+						<reference key="source" ref="188059510"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">97</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -282,6 +318,7 @@
 							<reference ref="818075622"/>
 							<reference ref="788845809"/>
 							<reference ref="327270817"/>
+							<reference ref="188059510"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -289,6 +326,7 @@
 						<int key="objectID">36</int>
 						<reference key="object" ref="558454645"/>
 						<reference key="parent" ref="883825266"/>
+						<string key="objectName">Button - list</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">41</int>
@@ -314,6 +352,12 @@
 						<reference key="object" ref="327270817"/>
 						<reference key="parent" ref="883825266"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">95</int>
+						<reference key="object" ref="188059510"/>
+						<reference key="parent" ref="883825266"/>
+						<string key="objectName">Button - goal</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -327,12 +371,13 @@
 				<string key="54.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="68.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="93.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="95.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">94</int>
+			<int key="maxID">97</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -340,10 +385,15 @@
 					<string key="className">MainViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="showGoal:">id</string>
 						<string key="showInfo:">id</string>
 						<string key="submitButton:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="showGoal:">
+							<string key="name">showGoal:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="showInfo:">
 							<string key="name">showInfo:</string>
 							<string key="candidateClassName">id</string>
@@ -393,6 +443,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="goal@2x.png">{88, 88}</string>
 			<string key="list@2x.png">{88, 88}</string>
 			<string key="tick@2x.png">{200, 168}</string>
 		</dictionary>
