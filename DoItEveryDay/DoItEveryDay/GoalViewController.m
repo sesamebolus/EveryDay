@@ -13,6 +13,7 @@
 @end
 
 @implementation GoalViewController
+@synthesize goalTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,4 +43,16 @@
     [self.delegate GoalViewControllerDidFinish:self];
 }
 
+- (IBAction)dismissKeyboard:(id)sender {
+    [goalTextField resignFirstResponder];
+}
+
+- (IBAction)saveGoal:(id)sender {
+    [goalTextField resignFirstResponder];
+}
+
+- (void)viewDidUnload {
+    [self setGoalTextField:nil];
+    [super viewDidUnload];
+}
 @end

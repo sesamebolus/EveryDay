@@ -17,5 +17,9 @@
 @interface GoalViewController : UIViewController
 
 @property (weak, nonatomic) id <GoalViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UITextField *goalTextField;
+
+- (IBAction)saveGoal:(id)sender;
+- (IBAction)dismissKeyboard:(id)sender;
 
 @end
