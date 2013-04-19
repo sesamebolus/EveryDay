@@ -32,7 +32,9 @@
     self.dbAccess = [[SqliteAccess alloc] init];
     [self.dbAccess openDatabase];
     
-    [goalTextField setText:[self.dbAccess getGoal]];
+    if ([self.dbAccess getGoal] != NULL) {
+        [goalTextField setText:[self.dbAccess getGoal]];
+    }
 }
 
 - (void)didReceiveMemoryWarning

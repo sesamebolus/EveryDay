@@ -36,8 +36,9 @@
     
     //[self.dbAccess deleteLastRecord];
     //[self.dbAccess deleteGoal];
-    //[self.dbAccess setGoal:@"吃蛋糕"];
-    //NSLog(@"my goal is %@", [self.dbAccess getGoal]);
+    if ([self.dbAccess getGoal] == NULL) {
+        NSLog(@"There is no goal.");
+    }
 }
 
 - (void)didReceiveMemoryWarning
