@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *clickButton;
 @property (weak, nonatomic) IBOutlet UIImageView *tickImage;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 - (IBAction)showInfo:(id)sender;
 - (IBAction)submitButton:(id)sender;

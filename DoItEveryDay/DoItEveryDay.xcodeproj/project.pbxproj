@@ -20,6 +20,7 @@
 		EC0465981713BB84001B39B2 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0465971713BB84001B39B2 /* FlipsideViewController.m */; };
 		EC04659B1713BB84001B39B2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0465991713BB84001B39B2 /* MainViewController.xib */; };
 		EC04659E1713BB84001B39B2 /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */; };
+		EC1C2CE21720CC3F009FED9C /* config@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1C2CE11720CC3F009FED9C /* config@2x.png */; };
 		EC77D9B6171FC20B00E65EC6 /* GoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */; };
 		EC77D9B7171FC20B00E65EC6 /* GoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */; };
 		EC77D9B9171FC89F00E65EC6 /* goal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9B8171FC89F00E65EC6 /* goal@2x.png */; };
@@ -67,6 +68,7 @@
 		EC0465971713BB84001B39B2 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		EC04659A1713BB84001B39B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
 		EC04659D1713BB84001B39B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
+		EC1C2CE11720CC3F009FED9C /* config@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "config@2x.png"; path = "Resources/config@2x.png"; sourceTree = "<group>"; };
 		EC77D9B3171FC20B00E65EC6 /* GoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalViewController.h; sourceTree = "<group>"; };
 		EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalViewController.m; sourceTree = "<group>"; };
 		EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		EC9FCB24171557E9008CD7E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EC1C2CE11720CC3F009FED9C /* config@2x.png */,
 				EC77D9B8171FC89F00E65EC6 /* goal@2x.png */,
 				EC77D9BC171FDC7100E65EC6 /* input@2x.png */,
 				EC77D9BD171FDC7100E65EC6 /* submit@2x.png */,
@@ -294,6 +297,7 @@
 				EC77D9B9171FC89F00E65EC6 /* goal@2x.png in Resources */,
 				EC77D9BE171FDC7100E65EC6 /* input@2x.png in Resources */,
 				EC77D9BF171FDC7100E65EC6 /* submit@2x.png in Resources */,
+				EC1C2CE21720CC3F009FED9C /* config@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

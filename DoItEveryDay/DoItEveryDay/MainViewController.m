@@ -56,6 +56,12 @@
         }
     }
     [results close];
+    
+    // date label
+    NSDate *date = [[NSDate alloc] init];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"M月d日"];
+    [self.dateLabel setText:[dateFormat stringFromDate:date]];
 }
 
 - (void)drawGradientLayer
@@ -187,6 +193,7 @@
 - (void)viewDidUnload {
     [self setTextLabel:nil];
     [self setTickImage:nil];
+    [self setDateLabel:nil];
     [super viewDidUnload];
 }
 @end
