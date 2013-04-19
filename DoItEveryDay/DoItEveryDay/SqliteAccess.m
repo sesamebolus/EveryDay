@@ -17,7 +17,7 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docsPath = [paths objectAtIndex:0];
-    NSString *path = [docsPath stringByAppendingPathComponent:@"database.sqlite"];
+    NSString *path = [docsPath stringByAppendingPathComponent:kDataBaseName];
     
     self.database = [FMDatabase databaseWithPath:path];
     
@@ -29,14 +29,17 @@
 -(void) creatDatabase
 {
     [self.database executeUpdate:@"create table log(date date primary key)"];
+    [self.database executeUpdate:@"create table goal(name text primary key)"];
 }
 
 -(void) closeDatabse
 {
-    [self.database close];
+    if ([self.database open]) {
+        [self.database close];
+    }
 }
 
-#pragma mark ------
+#pragma mark - Log Table
 
 -(NSDate *)getLastRecord
 {
@@ -70,5 +73,31 @@
     [results close];
     return dataArray;
 }
+
+#pragma mark - Goal Table
+
+
+-(void) setGoal: (NSString *)goal
+{
+    [self deleteGoal];
+    [self.database executeUpdate:@"insert into goal(name) values(?)", goal];
+}
+
+-(void) deleteGoal
+{
+   [self.database executeUpdate:@"delete from goal"]; 
+}
+
+-(NSString *) getGoal
+{ 
+    NSString *goal;
+    FMResultSet *results = [self.database executeQuery:@"select * from goal where rowid = (select max(rowid) from goal)"];
+    while([results next]) {
+        goal = [results stringForColumn:@"name"];
+    }
+    [results close];
+    return goal;
+}
+
 
 @end

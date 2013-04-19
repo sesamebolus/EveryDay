@@ -28,6 +28,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.dbAccess = [[SqliteAccess alloc] init];
+    [self.dbAccess openDatabase];
+    
+    [goalTextField setText:[self.dbAccess getGoal]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,11 +53,16 @@
 }
 
 - (IBAction)saveGoal:(id)sender {
+    [self.dbAccess setGoal:[goalTextField text]];
     [goalTextField resignFirstResponder];
+    [self done:nil];
 }
+
+#pragma mark - Unload
 
 - (void)viewDidUnload {
     [self setGoalTextField:nil];
     [super viewDidUnload];
+    [self.dbAccess closeDatabse];
 }
 @end

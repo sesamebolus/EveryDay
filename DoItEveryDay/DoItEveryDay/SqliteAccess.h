@@ -22,4 +22,8 @@
 -(void) insertRecord: (NSDate *)date;
 -(NSMutableArray *) getRecordList;
 
+-(void) setGoal: (NSString *)goal;
+-(void) deleteGoal;
+-(NSString *) getGoal;
+
 @end

@@ -33,7 +33,11 @@
     self.dbAccess = [[SqliteAccess alloc] init];
     [self.dbAccess openDatabase];
     [self.dbAccess creatDatabase];
+    
     //[self.dbAccess deleteLastRecord];
+    //[self.dbAccess deleteGoal];
+    //[self.dbAccess setGoal:@"吃蛋糕"];
+    //NSLog(@"my goal is %@", [self.dbAccess getGoal]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,7 +60,7 @@
         NSLog(@"You have finished it today!");
         [self endingAnimation];
     } else {
-        [self.textLabel setText:@"你今天运动了吗？"];
+        [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？",[self.dbAccess getGoal]]];
     }
 }
 
@@ -169,6 +173,7 @@
 - (void)GoalViewControllerDidFinish:(GoalViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self updateStatus];
 }
 
 - (IBAction)showGoal:(id)sender
