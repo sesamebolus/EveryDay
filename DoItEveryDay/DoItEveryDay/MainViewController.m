@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import "FMDatabase.h"
+#import "SqliteAccess.h"
 
 @interface MainViewController ()
 
@@ -20,48 +20,44 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // click button
     [self.clickButton setBackgroundColor:[UIColor blackColor]];
     [self.clickButton.layer setCornerRadius:80.0f];
-}
 
-- (void)updateStatus
-{
-    // setup and open SQLite database
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docsPath = [paths objectAtIndex:0];
-    NSString *path = [docsPath stringByAppendingPathComponent:@"database.sqlite"];
-    
-    self.database = [FMDatabase databaseWithPath:path];
-    
-    if (![self.database open]) {
-        NSLog(@"Could not open db.");
-        return;
-    }
-    [self.database executeUpdate:@"create table log(date date primary key)"];
-    
-    // read the latest record from database
-    FMResultSet *results = [self.database executeQuery:@"select * from log where rowid = (select max(rowid) from log)"];
-    while([results next]) {
-        NSDateComponents *lastDay = [[NSCalendar currentCalendar]
-                                     components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
-                                     fromDate:[results dateForColumn:@"date"]];
-        NSDateComponents *today = [[NSCalendar currentCalendar]
-                                   components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
-                                   fromDate:[NSDate date]];
-        if([today day] == [lastDay day] && [today month] == [lastDay month] && [today year] == [lastDay year] && [today era] == [lastDay era]) {
-            NSLog(@"You have finished it today!");
-            [self endingAnimation];
-        } else {
-            [self.textLabel setText:@"你今天运动了吗？"];
-        }
-    }
-    [results close];
-    
     // date label
     NSDate *date = [[NSDate alloc] init];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"M月d日"];
     [self.dateLabel setText:[dateFormat stringFromDate:date]];
+    
+    self.dbAccess = [[SqliteAccess alloc] init];
+    [self.dbAccess openDatabase];
+    [self.dbAccess creatDatabase];
+    //[self.dbAccess deleteLastRecord];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Update Status and Gradient Background
+
+- (void)updateStatus
+{ 
+    NSDateComponents *lastDay = [[NSCalendar currentCalendar]
+                                 components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                 fromDate:[self.dbAccess getLastRecord]];
+    NSDateComponents *today = [[NSCalendar currentCalendar]
+                               components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                               fromDate:[NSDate date]];
+    if([today day] == [lastDay day] && [today month] == [lastDay month] && [today year] == [lastDay year] && [today era] == [lastDay era]) {
+        NSLog(@"You have finished it today!");
+        [self endingAnimation];
+    } else {
+        [self.textLabel setText:@"你今天运动了吗？"];
+    }
 }
 
 - (void)drawGradientLayer
@@ -105,19 +101,18 @@
     [self.backgroundView.layer addSublayer:self.gradient];
 }
 
+#pragma mark - Submit Button
+
 - (IBAction)submitButton:(id)sender
 {
     [self endingAnimation];
         
     // insert a record to database
     NSDate *today = [NSDate date];
-    [self.database executeUpdate:@"insert into log(date) values(?)", today, nil];
+    [self.dbAccess insertRecord:today];
     
-    // close database
-    [self.database close];
+    [self.dbAccess closeDatabse];
 }
-
-#pragma mark - Ending Animation
 
 - (void)endingAnimation
 {
@@ -156,13 +151,7 @@
                      }];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Flipside View
+#pragma mark - Flipside View and Goal View
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
 {
@@ -190,10 +179,12 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 
+#pragma mark - Unload
 - (void)viewDidUnload {
     [self setTextLabel:nil];
     [self setTickImage:nil];
     [self setDateLabel:nil];
     [super viewDidUnload];
+    [self.dbAccess closeDatabse];
 }
 @end

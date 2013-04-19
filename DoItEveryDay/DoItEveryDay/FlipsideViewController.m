@@ -7,7 +7,7 @@
 //
 
 #import "FlipsideViewController.h"
-#import "FMDatabase.h"
+#import "SqliteAccess.h"
 
 @interface FlipsideViewController ()
 
@@ -22,33 +22,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    // open SQLite database
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docsPath = [paths objectAtIndex:0];
-    NSString *path = [docsPath stringByAppendingPathComponent:@"database.sqlite"];
-    
-    FMDatabase *database = [FMDatabase databaseWithPath:path];
-    
-    if (![database open]) {
-        NSLog(@"Could not open db.");
-        return;
-    }
-    
-    // setup date format
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
-    // read database
-    self.dataArray = [[NSMutableArray alloc] init];
-    FMResultSet *results = [database executeQuery:@"select * from log order by date desc limit 30"];
-    while([results next]) {
-        NSDate *targetDate = [results dateForColumn:@"date"];
-        [self.dataArray addObject:targetDate];
-    }
-    [results close];
-    
-    // close database
-    [database close];
+    self.dbAccess = [[SqliteAccess alloc] init];
+    [self.dbAccess openDatabase];
+    self.dataArray = [self.dbAccess getRecordList];
+    [self.dbAccess closeDatabse];
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SqliteAccess.h"
 
 @class FlipsideViewController;
 
@@ -17,7 +18,7 @@
 @interface FlipsideViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) id <FlipsideViewControllerDelegate> delegate;
-
+@property (nonatomic, retain) SqliteAccess *dbAccess;
 @property (nonatomic, retain) NSMutableArray *dataArray;
 
 - (IBAction)done:(id)sender;

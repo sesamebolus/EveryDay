@@ -6,17 +6,17 @@
 //  Copyright (c) 2013年 张 智超. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "FlipsideViewController.h"
 #import "GoalViewController.h"
-#import <QuartzCore/QuartzCore.h>
-#import "FMDatabase.h"
+#import "SqliteAccess.h"
 
 #define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0f]
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, GoalViewControllerDelegate>
 
 @property (nonatomic, retain) CAGradientLayer *gradient;
-@property (nonatomic, retain) FMDatabase *database;
+@property (nonatomic, retain) SqliteAccess *dbAccess;
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *clickButton;
