@@ -38,6 +38,7 @@
     //[self.dbAccess deleteGoal];
     if ([self.dbAccess getGoal] == NULL) {
         NSLog(@"There is no goal.");
+        [self performSelector:NSSelectorFromString(@"showGoal:") withObject:nil afterDelay:1];
     }
 }
 
