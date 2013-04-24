@@ -29,7 +29,7 @@
 -(void) creatDatabase
 {
     [self.database executeUpdate:@"create table log(date date primary key)"];
-    [self.database executeUpdate:@"create table goal(name text primary key)"];
+    [self.database executeUpdate:@"create table config(name text primary key, value text)"];
 }
 
 -(void) closeDatabse
@@ -74,26 +74,25 @@
     return dataArray;
 }
 
-#pragma mark - Goal Table
+#pragma mark - Config Table
 
 
 -(void) setGoal: (NSString *)goal
 {
-    [self deleteGoal];
-    [self.database executeUpdate:@"insert into goal(name) values(?)", goal];
+    [self.database executeUpdate:@"insert or replace into config(name, value) values(?, ?)", @"goal", goal];
 }
 
 -(void) deleteGoal
 {
-   [self.database executeUpdate:@"delete from goal"]; 
+   [self.database executeUpdate:@"delete from config where name = ?", @"goal"];
 }
 
 -(NSString *) getGoal
-{ 
+{
     NSString *goal;
-    FMResultSet *results = [self.database executeQuery:@"select * from goal where rowid = (select max(rowid) from goal)"];
+    FMResultSet *results = [self.database executeQuery:@"select value from config where name = ?", @"goal"];
     while([results next]) {
-        goal = [results stringForColumn:@"name"];
+        goal = [results stringForColumn:@"value"];
     }
     [results close];
     return goal;

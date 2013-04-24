@@ -36,10 +36,6 @@
     
     //[self.dbAccess deleteLastRecord];
     //[self.dbAccess deleteGoal];
-    if ([self.dbAccess getGoal] == NULL) {
-        NSLog(@"There is no goal.");
-        [self performSelector:NSSelectorFromString(@"showGoal:") withObject:nil afterDelay:1];
-    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,18 +47,34 @@
 #pragma mark - Update Status and Gradient Background
 
 - (void)updateStatus
-{ 
-    NSDateComponents *lastDay = [[NSCalendar currentCalendar]
-                                 components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
-                                 fromDate:[self.dbAccess getLastRecord]];
-    NSDateComponents *today = [[NSCalendar currentCalendar]
-                               components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
-                               fromDate:[NSDate date]];
-    if([today day] == [lastDay day] && [today month] == [lastDay month] && [today year] == [lastDay year] && [today era] == [lastDay era]) {
-        NSLog(@"You have finished it today!");
-        [self endingAnimation];
+{
+    if ([self.dbAccess getGoal] == NULL) {
+        [self.textLabel setText:@"请设定你的目标"];
+        [self.clickButton setHidden:YES];
+        NSLog(@"There is no goal.");
+        [self performSelector:NSSelectorFromString(@"showGoal:") withObject:nil afterDelay:1];
     } else {
-        [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？",[self.dbAccess getGoal]]];
+        if ([self.dbAccess getLastRecord] != NULL) {
+            NSDateComponents *lastDay = [[NSCalendar currentCalendar]
+                                         components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                         fromDate:[self.dbAccess getLastRecord]];
+            NSDateComponents *today = [[NSCalendar currentCalendar]
+                                       components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                       fromDate:[NSDate date]];
+            if([today day] == [lastDay day] && [today month] == [lastDay month] && [today year] == [lastDay year] && [today era] == [lastDay era]) {
+                NSLog(@"You have finished it today!");
+                [self.textLabel setText:@"很好，继续加油！"];
+                [self endingAnimation];
+            } else {
+                NSLog(@"You havn't finished it today!");
+                [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [self.dbAccess getGoal]]];
+                [self.clickButton setHidden:NO];
+            }
+        } else {
+            NSLog(@"First day, not finished.");
+            [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [self.dbAccess getGoal]]];
+            [self.clickButton setHidden:NO];
+        }
     }
 }
 
@@ -116,14 +128,10 @@
     // insert a record to database
     NSDate *today = [NSDate date];
     [self.dbAccess insertRecord:today];
-    
-    [self.dbAccess closeDatabse];
 }
 
 - (void)endingAnimation
 {
-    [self.textLabel setText:@"很好，继续加油！"];
-    
     [UIView animateWithDuration:0.2
                           delay:0
                         options: UIViewAnimationOptionCurveEaseOut

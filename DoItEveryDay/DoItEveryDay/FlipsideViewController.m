@@ -55,11 +55,12 @@
     }
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormat setDateFormat:@"yyyy-MM-dd (EEEE) HH:mm"];
     [cell.textLabel setText:
         [[NSString alloc] initWithFormat:@"%@", [dateFormat stringFromDate: [self.dataArray objectAtIndex:indexPath.row]]]
     ];
-    [cell.textLabel setFont:[UIFont systemFontOfSize:15]];
+    [cell.textLabel setTextColor:[UIColor colorWithRed:51/255.0f green:51/255.0f blue:51/255.0f alpha:1.0f]];
+    [cell.textLabel setFont:[UIFont systemFontOfSize:18]];
     return cell;
 }
 
