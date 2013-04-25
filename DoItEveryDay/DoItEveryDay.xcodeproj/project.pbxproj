@@ -166,7 +166,10 @@
 				EC04658B1713BB84001B39B2 /* AppDelegate.m */,
 				EC0465931713BB84001B39B2 /* MainViewController.h */,
 				EC0465941713BB84001B39B2 /* MainViewController.m */,
+				EC0465991713BB84001B39B2 /* MainViewController.xib */,
 				EC0465961713BB84001B39B2 /* FlipsideViewController.h */,
+				EC0465971713BB84001B39B2 /* FlipsideViewController.m */,
+				EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */,
 				EC77D9B3171FC20B00E65EC6 /* GoalViewController.h */,
 				EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */,
 				EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */,
@@ -174,9 +177,6 @@
 				EC1C2CE417210452009FED9C /* SqliteAccess.m */,
 				EC22BC9017291C4B00586493 /* LogItem.h */,
 				EC22BC9117291C4B00586493 /* LogItem.m */,
-				EC0465971713BB84001B39B2 /* FlipsideViewController.m */,
-				EC0465991713BB84001B39B2 /* MainViewController.xib */,
-				EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */,
 				EC0465821713BB84001B39B2 /* Supporting Files */,
 			);
 			path = DoItEveryDay;
