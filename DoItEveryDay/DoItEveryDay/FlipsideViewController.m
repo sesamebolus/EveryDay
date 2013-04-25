@@ -8,6 +8,7 @@
 
 #import "FlipsideViewController.h"
 #import "SqliteAccess.h"
+#import "LogItem.h"
 
 @interface FlipsideViewController ()
 
@@ -66,10 +67,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    LogItem *logItem = [self.dataArray objectAtIndex:indexPath.row];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM-dd (EEEE) HH:mm"];
     [cell.textLabel setText:
-        [[NSString alloc] initWithFormat:@"%@", [dateFormat stringFromDate: [self.dataArray objectAtIndex:indexPath.row]]]
+        [[NSString alloc] initWithFormat:@"%@", [dateFormat stringFromDate: logItem.date]]
     ];
     [cell.textLabel setTextColor:[UIColor colorWithRed:51/255.0f green:51/255.0f blue:51/255.0f alpha:1.0f]];
     [cell.textLabel setFont:[UIFont systemFontOfSize:18]];
@@ -81,8 +83,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    LogItem *logItem = [self.dataArray objectAtIndex:indexPath.row];
+    
     [self.dbAccess openDatabase];
-    [self.dbAccess deleteRecordAtIndex:indexPath.row];
+    [self.dbAccess deleteRecordAtIndex:logItem.rowid];
     [self.dbAccess closeDatabse];
     
     [self.dataArray removeObjectAtIndex:indexPath.row];

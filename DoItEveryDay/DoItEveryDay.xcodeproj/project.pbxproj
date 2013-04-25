@@ -24,6 +24,7 @@
 		EC1C2CE517210452009FED9C /* SqliteAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1C2CE417210452009FED9C /* SqliteAccess.m */; };
 		EC22BC8E1728F1E700586493 /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22BC8C1728F1E700586493 /* done@2x.png */; };
 		EC22BC8F1728F1E700586493 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22BC8D1728F1E700586493 /* edit@2x.png */; };
+		EC22BC9217291C4B00586493 /* LogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22BC9117291C4B00586493 /* LogItem.m */; };
 		EC77D9B6171FC20B00E65EC6 /* GoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */; };
 		EC77D9B7171FC20B00E65EC6 /* GoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */; };
 		EC77D9B9171FC89F00E65EC6 /* goal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9B8171FC89F00E65EC6 /* goal@2x.png */; };
@@ -76,6 +77,8 @@
 		EC1C2CE417210452009FED9C /* SqliteAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteAccess.m; sourceTree = "<group>"; };
 		EC22BC8C1728F1E700586493 /* done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "done@2x.png"; path = "Resources/done@2x.png"; sourceTree = "<group>"; };
 		EC22BC8D1728F1E700586493 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "edit@2x.png"; path = "Resources/edit@2x.png"; sourceTree = "<group>"; };
+		EC22BC9017291C4B00586493 /* LogItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogItem.h; sourceTree = "<group>"; };
+		EC22BC9117291C4B00586493 /* LogItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogItem.m; sourceTree = "<group>"; };
 		EC77D9B3171FC20B00E65EC6 /* GoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalViewController.h; sourceTree = "<group>"; };
 		EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalViewController.m; sourceTree = "<group>"; };
 		EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalViewController.xib; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */,
 				EC1C2CE317210452009FED9C /* SqliteAccess.h */,
 				EC1C2CE417210452009FED9C /* SqliteAccess.m */,
+				EC22BC9017291C4B00586493 /* LogItem.h */,
+				EC22BC9117291C4B00586493 /* LogItem.m */,
 				EC0465971713BB84001B39B2 /* FlipsideViewController.m */,
 				EC0465991713BB84001B39B2 /* MainViewController.xib */,
 				EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */,
@@ -332,6 +337,7 @@
 				ECA616E61717A13700B118A0 /* FMResultSet.m in Sources */,
 				EC77D9B6171FC20B00E65EC6 /* GoalViewController.m in Sources */,
 				EC1C2CE517210452009FED9C /* SqliteAccess.m in Sources */,
+				EC22BC9217291C4B00586493 /* LogItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

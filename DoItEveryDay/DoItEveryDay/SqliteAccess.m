@@ -8,6 +8,7 @@
 
 #import "SqliteAccess.h"
 #import "FMDatabase.h"
+#import "LogItem.h"
 
 #define kDataBaseName @"database.sqlite"
 
@@ -54,7 +55,7 @@
 
 -(void) deleteRecordAtIndex: (NSInteger)index
 {
-    [self.database executeUpdate:@"delete from log where rowid = ?", [NSNumber numberWithInt:(index + 1)]];
+    [self.database executeUpdate:@"delete from log where rowid = ?", [NSNumber numberWithInt:index]];
     if ([self.database hadError]) {
         NSLog(@"Err %d: %@", [self.database lastErrorCode], [self.database lastErrorMessage]);
     }
@@ -68,10 +69,12 @@
 -(NSMutableArray *) getRecordList
 {
     NSMutableArray *dataArray = [[NSMutableArray alloc] init];
-    FMResultSet *results = [self.database executeQuery:@"select * from log order by date desc limit 30"];
+    LogItem *logItem = [[LogItem alloc] init];
+    FMResultSet *results = [self.database executeQuery:@"select rowid, * from log order by date desc limit 30"];
     while([results next]) {
-        NSDate *targetDate = [results dateForColumn:@"date"];
-        [dataArray addObject:targetDate];
+        logItem.rowid = [results intForColumn:@"rowid"];
+        logItem.date = [results dateForColumn:@"date"];
+        [dataArray addObject:logItem];
     }
     [results close];
     return dataArray;
