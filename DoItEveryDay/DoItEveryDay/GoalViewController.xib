@@ -80,7 +80,7 @@
 							<object class="IBUIButton" id="456049719">
 								<reference key="NSNextResponder" ref="140414121"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrameSize">{43, 44}</string>
+								<string key="NSFrameSize">{44, 44}</string>
 								<reference key="NSSuperview" ref="140414121"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="64508960"/>
@@ -462,7 +462,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="backButton@2x.png">{86, 88}</string>
+			<string key="backButton@2x.png">{88, 88}</string>
 			<string key="input@2x.png">{520, 88}</string>
 			<string key="submit@2x.png">{520, 88}</string>
 		</dictionary>

@@ -41,7 +41,19 @@
     [self.delegate flipsideViewControllerDidFinish:self];
 }
 
+- (IBAction)tableViewEdit:(id)sender
+{
+    [self.tableview setEditing:!self.tableview.editing animated:YES];
+    if (self.tableview.editing) {
+        [sender setImage:[UIImage imageNamed:@"done@2x.png"] forState:UIControlStateNormal];
+    } else {
+        [sender setImage:[UIImage imageNamed:@"edit@2x.png"] forState:UIControlStateNormal];
+    }
+
+}
+
 #pragma mark - tableview
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.dataArray count];
 }
@@ -64,4 +76,24 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.dbAccess openDatabase];
+    [self.dbAccess deleteRecordAtIndex:indexPath.row];
+    [self.dbAccess closeDatabse];
+    
+    [self.dataArray removeObjectAtIndex:indexPath.row];
+    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+    [self.tableview deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+}
+
+#pragma mark - unload
+
+- (void)viewDidUnload {
+    [self setTableview:nil];
+    [super viewDidUnload];
+}
 @end

@@ -57,6 +57,14 @@
     [self.database executeUpdate:@"delete from log where rowid = (select max(rowid) from log)"];
 }
 
+-(void) deleteRecordAtIndex: (NSInteger)index
+{
+    [self.database executeUpdate:@"delete from log where rowid = ?", [NSNumber numberWithInt:(index + 1)]];
+    if ([self.database hadError]) {
+        NSLog(@"Err %d: %@", [self.database lastErrorCode], [self.database lastErrorMessage]);
+    }
+}
+
 -(void) insertRecord: (NSDate *)date
 {
     [self.database executeUpdate:@"insert into log(date) values(?)", date, nil];

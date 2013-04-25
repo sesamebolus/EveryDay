@@ -20,7 +20,9 @@
 @property (weak, nonatomic) id <FlipsideViewControllerDelegate> delegate;
 @property (nonatomic, retain) SqliteAccess *dbAccess;
 @property (nonatomic, retain) NSMutableArray *dataArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 - (IBAction)done:(id)sender;
+- (IBAction)tableViewEdit:(id)sender;
 
 @end

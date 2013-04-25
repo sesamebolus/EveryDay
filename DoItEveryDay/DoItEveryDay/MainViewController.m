@@ -68,14 +68,25 @@
             } else {
                 NSLog(@"You havn't finished it today!");
                 [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [self.dbAccess getGoal]]];
-                [self.clickButton setHidden:NO];
+                [self resetCLickButton];
             }
         } else {
             NSLog(@"First day, not finished.");
             [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [self.dbAccess getGoal]]];
-            [self.clickButton setHidden:NO];
+            [self resetCLickButton];
         }
     }
+}
+
+- (void)resetCLickButton
+{
+    [self.clickButton setHidden:NO];
+    [self.tickImage setHidden:YES];
+    [self.clickButton setFrame:CGRectMake(
+                                          (self.view.frame.size.width - self.clickButton.frame.size.width) / 2,
+                                          self.view.frame.size.height - (self.clickButton.frame.size.height / 2),
+                                          self.clickButton.frame.size.width,
+                                          self.clickButton.frame.size.height)];
 }
 
 - (void)drawGradientLayer
@@ -144,7 +155,6 @@
                                                                )];
                      }
                      completion:^(BOOL finished){
-                         [self.clickButton removeFromSuperview];
                          [self animationFinished];
                      }];
 }
@@ -170,6 +180,7 @@
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self updateStatus];
 }
 
 - (IBAction)showInfo:(id)sender
