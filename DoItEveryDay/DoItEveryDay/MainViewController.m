@@ -33,9 +33,6 @@
     self.dbAccess = [[SqliteAccess alloc] init];
     [self.dbAccess openDatabase];
     [self.dbAccess creatDatabase];
-    
-    //[self.dbAccess deleteLastRecord];
-    //[self.dbAccess deleteGoal];
 }
 
 - (void)didReceiveMemoryWarning

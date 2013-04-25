@@ -52,11 +52,6 @@
     return lastRecord;
 }
 
--(void) deleteLastRecord
-{
-    [self.database executeUpdate:@"delete from log where rowid = (select max(rowid) from log)"];
-}
-
 -(void) deleteRecordAtIndex: (NSInteger)index
 {
     [self.database executeUpdate:@"delete from log where rowid = ?", [NSNumber numberWithInt:(index + 1)]];
