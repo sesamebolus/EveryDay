@@ -14,23 +14,30 @@
 
 @implementation SqliteAccess
 
--(void) openDatabase
+-(id) init
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docsPath = [paths objectAtIndex:0];
-    NSString *path = [docsPath stringByAppendingPathComponent:kDataBaseName];
-    
-    self.database = [FMDatabase databaseWithPath:path];
-    
-    if (![self.database open]) {
-        NSLog(@"Could not open db.");
+    self = [super init];
+    if (self) {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *docsPath = [paths objectAtIndex:0];
+        NSString *path = [docsPath stringByAppendingPathComponent:kDataBaseName];
+        
+        self.database = [FMDatabase databaseWithPath:path];
     }
+    return self;
 }
 
 -(void) creatDatabase
 {
     [self.database executeUpdate:@"create table log(date date primary key)"];
     [self.database executeUpdate:@"create table config(name text primary key, value text)"];
+}
+
+-(void) openDatabase
+{
+    if (![self.database open]) {
+        [self.database open];
+    }
 }
 
 -(void) closeDatabse
@@ -69,9 +76,9 @@
 -(NSMutableArray *) getRecordList
 {
     NSMutableArray *dataArray = [[NSMutableArray alloc] init];
-    LogItem *logItem = [[LogItem alloc] init];
     FMResultSet *results = [self.database executeQuery:@"select rowid, * from log order by date desc limit 30"];
     while([results next]) {
+        LogItem *logItem = [[LogItem alloc] init];
         logItem.rowid = [results intForColumn:@"rowid"];
         logItem.date = [results dateForColumn:@"date"];
         [dataArray addObject:logItem];
