@@ -160,23 +160,13 @@
 		EC0465811713BB84001B39B2 /* DoItEveryDay */ = {
 			isa = PBXGroup;
 			children = (
+				EC9231C2172A0CED00F65FC8 /* DataAccess */,
+				EC9231C1172A0CC700F65FC8 /* ViewController */,
+				EC9231C0172A0CB200F65FC8 /* Modal */,
 				ECA616D71717A13700B118A0 /* FMDB */,
 				EC9FCB24171557E9008CD7E9 /* Resources */,
 				EC04658A1713BB84001B39B2 /* AppDelegate.h */,
 				EC04658B1713BB84001B39B2 /* AppDelegate.m */,
-				EC0465931713BB84001B39B2 /* MainViewController.h */,
-				EC0465941713BB84001B39B2 /* MainViewController.m */,
-				EC0465991713BB84001B39B2 /* MainViewController.xib */,
-				EC0465961713BB84001B39B2 /* FlipsideViewController.h */,
-				EC0465971713BB84001B39B2 /* FlipsideViewController.m */,
-				EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */,
-				EC77D9B3171FC20B00E65EC6 /* GoalViewController.h */,
-				EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */,
-				EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */,
-				EC1C2CE317210452009FED9C /* SqliteAccess.h */,
-				EC1C2CE417210452009FED9C /* SqliteAccess.m */,
-				EC22BC9017291C4B00586493 /* LogItem.h */,
-				EC22BC9117291C4B00586493 /* LogItem.m */,
 				EC0465821713BB84001B39B2 /* Supporting Files */,
 			);
 			path = DoItEveryDay;
@@ -194,6 +184,40 @@
 				EC0465911713BB84001B39B2 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC9231C0172A0CB200F65FC8 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				EC22BC9017291C4B00586493 /* LogItem.h */,
+				EC22BC9117291C4B00586493 /* LogItem.m */,
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		EC9231C1172A0CC700F65FC8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EC0465931713BB84001B39B2 /* MainViewController.h */,
+				EC0465941713BB84001B39B2 /* MainViewController.m */,
+				EC0465991713BB84001B39B2 /* MainViewController.xib */,
+				EC0465961713BB84001B39B2 /* FlipsideViewController.h */,
+				EC0465971713BB84001B39B2 /* FlipsideViewController.m */,
+				EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */,
+				EC77D9B3171FC20B00E65EC6 /* GoalViewController.h */,
+				EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */,
+				EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		EC9231C2172A0CED00F65FC8 /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				EC1C2CE317210452009FED9C /* SqliteAccess.h */,
+				EC1C2CE417210452009FED9C /* SqliteAccess.m */,
+			);
+			name = DataAccess;
 			sourceTree = "<group>";
 		};
 		EC9FCB24171557E9008CD7E9 /* Resources */ = {

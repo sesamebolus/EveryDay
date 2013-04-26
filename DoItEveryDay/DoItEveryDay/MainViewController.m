@@ -27,7 +27,7 @@
     // date label
     NSDate *date = [[NSDate alloc] init];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"M月d日"];
+    [dateFormat setDateFormat:@"M月d日 / EEEE"];
     [self.dateLabel setText:[dateFormat stringFromDate:date]];
     
     self.dbAccess = [[SqliteAccess alloc] init];
