@@ -10,4 +10,7 @@
 
 @implementation LogItem
 
+@synthesize rowid;
+@synthesize date;
+
 @end
