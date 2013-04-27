@@ -60,7 +60,7 @@
                                        fromDate:[NSDate date]];
             if([today day] == [lastDay day] && [today month] == [lastDay month] && [today year] == [lastDay year] && [today era] == [lastDay era]) {
                 NSLog(@"You have finished it today!");
-                [self.textLabel setText:@"很好，继续加油！"];
+                [self.textLabel setText:@"很好，明天继续加油！"];
                 [self endingAnimation];
             } else {
                 NSLog(@"You havn't finished it today!");
@@ -158,6 +158,8 @@
 
 - (void)animationFinished
 {
+    [self.textLabel setText:@"很好，明天继续加油！"];
+    
     [self.tickImage setAlpha:0.0f];
     [self.tickImage setHidden:NO];
     
