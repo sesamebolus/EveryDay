@@ -69,7 +69,7 @@
     
     LogItem *logItem = [self.dataArray objectAtIndex:indexPath.row];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"M月d日 (EEEE) HH:mm"];
+    [dateFormat setDateFormat:@"yyyy年M月d日 (EEEE) HH:mm"];
     [cell.textLabel setText:
         [[NSString alloc] initWithFormat:@"%@", [dateFormat stringFromDate: logItem.date]]
     ];
