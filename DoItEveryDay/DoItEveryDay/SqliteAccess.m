@@ -8,6 +8,7 @@
 
 #import "SqliteAccess.h"
 #import "FMDatabase.h"
+#import "FMDatabaseAdditions.h"
 #import "LogItem.h"
 
 #define kDataBaseName @"database.sqlite"
@@ -85,6 +86,14 @@
     }
     [results close];
     return dataArray;
+}
+
+-(NSUInteger) getProgress
+{
+    NSUInteger count = [self.database intForQuery:@"select count(date) from log where date between ? and ?",
+                        [NSDate dateWithTimeInterval:-86400*7 sinceDate:[NSDate date]],
+                        [NSDate date]];
+    return count;
 }
 
 #pragma mark - Config Table

@@ -21,6 +21,7 @@
 -(void) deleteRecordAtIndex: (NSInteger)index;
 -(void) insertRecord: (NSDate *)date;
 -(NSMutableArray *) getRecordList;
+-(NSUInteger) getProgress;
 
 -(void) setGoal: (NSString *)goal;
 -(void) deleteGoal;

@@ -27,7 +27,7 @@
     // date label
     NSDate *date = [[NSDate alloc] init];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"M月d日 / EEEE"];
+    [dateFormat setDateFormat:@"M月d日\nEEEE"];
     [self.dateLabel setText:[dateFormat stringFromDate:date]];
     
     self.dbAccess = [[SqliteAccess alloc] init];
@@ -73,6 +73,8 @@
             [self resetCLickButton];
         }
     }
+    
+    [self updateProgressLabel];
 }
 
 - (void)resetCLickButton
@@ -84,6 +86,11 @@
                                           self.view.frame.size.height - (self.clickButton.frame.size.height / 2),
                                           self.clickButton.frame.size.width,
                                           self.clickButton.frame.size.height)];
+}
+
+- (void)updateProgressLabel
+{
+    [self.progressLabel setText:[NSString stringWithFormat:@"%u%%", [self.dbAccess getProgress] * 100 / 7]];
 }
 
 - (void)drawGradientLayer
@@ -159,6 +166,7 @@
 - (void)animationFinished
 {
     [self.textLabel setText:@"很好，明天继续加油！"];
+    [self updateProgressLabel];
     
     [self.tickImage setAlpha:0.0f];
     [self.tickImage setHidden:NO];
@@ -209,6 +217,7 @@
     [self setTextLabel:nil];
     [self setTickImage:nil];
     [self setDateLabel:nil];
+    [self setProgressLabel:nil];
     [super viewDidUnload];
     [self.dbAccess closeDatabse];
 }
