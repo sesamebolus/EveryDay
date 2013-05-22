@@ -32,7 +32,7 @@
     
     self.dbAccess = [[SqliteAccess alloc] init];
     [self.dbAccess openDatabase];
-    [self.dbAccess creatDatabase];
+    [self.dbAccess createDatabase];
 }
 
 - (void)didReceiveMemoryWarning

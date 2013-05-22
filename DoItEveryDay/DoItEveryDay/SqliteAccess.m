@@ -28,7 +28,7 @@
     return self;
 }
 
--(void) creatDatabase
+-(void) createDatabase
 {
     [self.database executeUpdate:@"create table log(date date primary key)"];
     [self.database executeUpdate:@"create table config(name text primary key, value text)"];

@@ -14,7 +14,7 @@
 @property (nonatomic, retain) FMDatabase *database;
 
 -(void) openDatabase;
--(void) creatDatabase;
+-(void) createDatabase;
 -(void) closeDatabse;
 
 -(NSDate *) getLastRecord;
