@@ -43,6 +43,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Local Notification
+
+- (void) localNotification
+{
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    if ([self.dbAccess getGoal]) {
+        UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+        if (localNotif == nil) return;
+        NSDate *fireTime = [self tomorrowAt7AM];
+        localNotif.fireDate = fireTime;
+        localNotif.soundName = UILocalNotificationDefaultSoundName;
+        localNotif.alertBody = [NSString stringWithFormat:@"你今天%@了吗？", [self.dbAccess getGoal]];
+        localNotif.repeatInterval = NSDayCalendarUnit;
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    }
+}
+
+- (NSDate *) tomorrowAt7AM
+{
+    NSDate* now = [NSDate date];
+    
+    NSDateComponents* tomorrowComponents = [NSDateComponents new];
+    tomorrowComponents.day = 1;
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDate* tomorrow = [calendar dateByAddingComponents:tomorrowComponents toDate:now options:0];
+    
+    NSDateComponents* tomorrowAt7AMComponents = [calendar components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:tomorrow];
+    tomorrowAt7AMComponents.hour = 7;
+    return [calendar dateFromComponents:tomorrowAt7AMComponents];
+}
+
 #pragma mark - Actions
 
 - (IBAction)done:(id)sender
@@ -56,6 +87,7 @@
 
 - (IBAction)saveGoal:(id)sender {
     [self.dbAccess setGoal:[goalTextField text]];
+    [self localNotification];
     [goalTextField resignFirstResponder];
     [self done:nil];
 }
