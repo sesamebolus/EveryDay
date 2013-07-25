@@ -13,7 +13,6 @@
 @end
 
 @implementation GoalViewController
-@synthesize goalTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,12 +28,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.dbAccess = [[SqliteAccess alloc] init];
-    [self.dbAccess openDatabase];
+    // read plist
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
     
-    if ([self.dbAccess getGoal] != NULL) {
-        [goalTextField setText:[self.dbAccess getGoal]];
+    if ([[data objectForKey: @"myGoal"] length] != 0)
+    {
+        [self.goalTextField setText:[data objectForKey: @"myGoal"]];
     }
+    
+    if ([[data objectForKey:@"isClockOn"] boolValue]) {
+        self.clockSwitch.on = YES;
+        self.clockTimePicker.hidden = NO;
+    } else {
+        self.clockSwitch.on = NO;
+        self.clockTimePicker.hidden = YES;
+    }
+    
+    NSDate *selectedTime = [data objectForKey:@"clockTime"];
+    [self.clockTimePicker setDate:selectedTime];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,35 +55,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Local Notification
-
-- (void) localNotification
+- (NSDate *) tomorrowTime: (NSDate *) targetTime
 {
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    if ([self.dbAccess getGoal]) {
-        UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-        if (localNotif == nil) return;
-        NSDate *fireTime = [self tomorrowAtHour:7 withMinute:5]; // AM 7:05
-        localNotif.fireDate = fireTime;
-        localNotif.soundName = UILocalNotificationDefaultSoundName;
-        localNotif.alertBody = [NSString stringWithFormat:@"你今天%@了吗？", [self.dbAccess getGoal]];
-        localNotif.repeatInterval = NSDayCalendarUnit;
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
-    }
-}
-
-- (NSDate *) tomorrowAtHour: (NSInteger) targetHour withMinute:(NSInteger) targetMinute
-{
-    NSDate* now = [NSDate date];
-    
     NSDateComponents* tomorrowComponents = [NSDateComponents new];
     tomorrowComponents.day = 1;
     NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDate* tomorrow = [calendar dateByAddingComponents:tomorrowComponents toDate:now options:0];
+    NSDate* tomorrow = [calendar dateByAddingComponents:tomorrowComponents toDate:targetTime options:0];
     
     NSDateComponents* tomorrowAtHourComponents = [calendar components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:tomorrow];
-    tomorrowAtHourComponents.hour = targetHour;
-    tomorrowAtHourComponents.minute = targetMinute;
     return [calendar dateFromComponents:tomorrowAtHourComponents];
 }
 
@@ -83,13 +74,39 @@
 }
 
 - (IBAction)dismissKeyboard:(id)sender {
-    [goalTextField resignFirstResponder];
+    [self.goalTextField resignFirstResponder];
+}
+
+- (IBAction)clockSwitchChanged:(id)sender {
+    self.clockTimePicker.hidden = !self.clockSwitch.isOn;
 }
 
 - (IBAction)saveGoal:(id)sender {
-    [self.dbAccess setGoal:[goalTextField text]];
-    [self localNotification];
-    [goalTextField resignFirstResponder];
+    // read plist
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    
+    // localNotification
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    if ([[self.goalTextField text] length] != 0 && self.clockSwitch.isOn) {
+        UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+        if (localNotif == nil) return;
+        NSDate *fireTime = [self tomorrowTime:[self.clockTimePicker date]];
+        localNotif.fireDate = fireTime;
+        localNotif.soundName = UILocalNotificationDefaultSoundName;
+        localNotif.alertBody = [NSString stringWithFormat:@"你今天%@了吗？", [self.goalTextField text]];
+        localNotif.repeatInterval = NSDayCalendarUnit;
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    }
+    
+    // write plist
+    [data setObject:[self.goalTextField text] forKey:@"myGoal"];
+    [data setObject:[NSNumber numberWithBool:self.clockSwitch.isOn] forKey:@"isClockOn"];
+    [data setObject:[self.clockTimePicker date] forKey:@"clockTime"];
+    [data writeToFile:plistPath atomically:YES];
+    
+    // exit
+    [self.goalTextField resignFirstResponder];
     [self done:nil];
 }
 
@@ -97,7 +114,8 @@
 
 - (void)viewDidUnload {
     [self setGoalTextField:nil];
+    [self setClockTimePicker:nil];
+    [self setClockSwitch:nil];
     [super viewDidUnload];
-    [self.dbAccess closeDatabse];
 }
 @end

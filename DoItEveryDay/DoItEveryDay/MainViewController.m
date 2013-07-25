@@ -45,12 +45,17 @@
 
 - (void)updateStatus
 {
-    if ([self.dbAccess getGoal] == NULL) {
+    // read plist
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    // NSLog(@"%@", data);
+    if ([[data objectForKey: @"myGoal"] length] == 0) {
+        NSLog(@"There is no goal.");
         [self.textLabel setText:@"请设定你的目标"];
         [self.clickButton setHidden:YES];
-        NSLog(@"There is no goal.");
         [self performSelector:NSSelectorFromString(@"showGoal:") withObject:nil afterDelay:1];
     } else {
+        NSLog(@"I do have a goal.");
         if ([self.dbAccess getLastRecord] != NULL) {
             NSDateComponents *lastDay = [[NSCalendar currentCalendar]
                                          components:NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
@@ -64,12 +69,12 @@
                 [self endingAnimation];
             } else {
                 NSLog(@"You havn't finished it today!");
-                [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [self.dbAccess getGoal]]];
+                [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [data objectForKey: @"myGoal"]]];
                 [self resetCLickButton];
             }
         } else {
             NSLog(@"First day, not finished.");
-            [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [self.dbAccess getGoal]]];
+            [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [data objectForKey: @"myGoal"]]];
             [self resetCLickButton];
         }
     }

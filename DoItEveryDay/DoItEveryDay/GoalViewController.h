@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SqliteAccess.h"
 
 @class GoalViewController;
 
@@ -19,9 +18,11 @@
 
 @property (weak, nonatomic) id <GoalViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *goalTextField;
-@property (nonatomic, retain) SqliteAccess *dbAccess;
+@property (weak, nonatomic) IBOutlet UISwitch *clockSwitch;
+@property (weak, nonatomic) IBOutlet UIDatePicker *clockTimePicker;
 
 - (IBAction)saveGoal:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
+- (IBAction)clockSwitchChanged:(id)sender;
 
 @end

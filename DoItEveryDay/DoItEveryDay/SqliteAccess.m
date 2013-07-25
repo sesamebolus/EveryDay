@@ -96,29 +96,4 @@
     return count;
 }
 
-#pragma mark - Config Table
-
-
--(void) setGoal: (NSString *)goal
-{
-    [self.database executeUpdate:@"insert or replace into config(name, value) values(?, ?)", @"goal", goal];
-}
-
--(void) deleteGoal
-{
-   [self.database executeUpdate:@"delete from config where name = ?", @"goal"];
-}
-
--(NSString *) getGoal
-{
-    NSString *goal;
-    FMResultSet *results = [self.database executeQuery:@"select value from config where name = ?", @"goal"];
-    while([results next]) {
-        goal = [results stringForColumn:@"value"];
-    }
-    [results close];
-    return goal;
-}
-
-
 @end
