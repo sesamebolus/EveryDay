@@ -51,7 +51,7 @@
     if ([self.dbAccess getGoal]) {
         UILocalNotification *localNotif = [[UILocalNotification alloc] init];
         if (localNotif == nil) return;
-        NSDate *fireTime = [self tomorrowAt7AM];
+        NSDate *fireTime = [self tomorrowAtHour:7 withMinute:5]; // AM 7:05
         localNotif.fireDate = fireTime;
         localNotif.soundName = UILocalNotificationDefaultSoundName;
         localNotif.alertBody = [NSString stringWithFormat:@"你今天%@了吗？", [self.dbAccess getGoal]];
@@ -60,7 +60,7 @@
     }
 }
 
-- (NSDate *) tomorrowAt7AM
+- (NSDate *) tomorrowAtHour: (NSInteger) targetHour withMinute:(NSInteger) targetMinute
 {
     NSDate* now = [NSDate date];
     
@@ -69,9 +69,10 @@
     NSCalendar* calendar = [NSCalendar currentCalendar];
     NSDate* tomorrow = [calendar dateByAddingComponents:tomorrowComponents toDate:now options:0];
     
-    NSDateComponents* tomorrowAt7AMComponents = [calendar components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:tomorrow];
-    tomorrowAt7AMComponents.hour = 7;
-    return [calendar dateFromComponents:tomorrowAt7AMComponents];
+    NSDateComponents* tomorrowAtHourComponents = [calendar components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:tomorrow];
+    tomorrowAtHourComponents.hour = targetHour;
+    tomorrowAtHourComponents.minute = targetMinute;
+    return [calendar dateFromComponents:tomorrowAtHourComponents];
 }
 
 #pragma mark - Actions
