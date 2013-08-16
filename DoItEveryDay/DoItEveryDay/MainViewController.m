@@ -46,10 +46,14 @@
 - (void)updateStatus
 {
     // read plist
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"];
-    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-    // NSLog(@"%@", data);
-    if ([[data objectForKey: @"myGoal"] length] == 0) {
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsDir = documentPaths[0];
+    NSString *filePathInDocsDir = [docsDir stringByAppendingPathComponent:@"config.plist"];
+    NSDictionary *data = [[NSDictionary alloc] initWithContentsOfFile:filePathInDocsDir];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSLog(@"%@", data);
+    
+    if (![fileManager fileExistsAtPath:filePathInDocsDir]) {
         NSLog(@"There is no goal.");
         [self.textLabel setText:@"请设定你的目标"];
         [self.clickButton setHidden:YES];

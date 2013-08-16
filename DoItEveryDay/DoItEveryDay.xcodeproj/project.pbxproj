@@ -47,7 +47,6 @@
 		ECA616E41717A13700B118A0 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA616DD1717A13700B118A0 /* FMDatabasePool.m */; };
 		ECA616E51717A13700B118A0 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA616DF1717A13700B118A0 /* FMDatabaseQueue.m */; };
 		ECA616E61717A13700B118A0 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA616E11717A13700B118A0 /* FMResultSet.m */; };
-		ECBD9D7517A0F47D00B69801 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECBD9D7417A0F47D00B69801 /* config.plist */; };
 		ECE533A017169F88004414B1 /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE5339E17169F88004414B1 /* list@2x.png */; };
 		ECE533A117169F88004414B1 /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE5339F17169F88004414B1 /* tick@2x.png */; };
 		ECEFED6F1713E7BF00335E9E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEFED6E1713E7BF00335E9E /* QuartzCore.framework */; };
@@ -108,7 +107,6 @@
 		ECA616DF1717A13700B118A0 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		ECA616E01717A13700B118A0 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		ECA616E11717A13700B118A0 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		ECBD9D7417A0F47D00B69801 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		ECE5339E17169F88004414B1 /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "list@2x.png"; path = "Resources/list@2x.png"; sourceTree = "<group>"; };
 		ECE5339F17169F88004414B1 /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tick@2x.png"; path = "Resources/tick@2x.png"; sourceTree = "<group>"; };
 		ECEFED6E1713E7BF00335E9E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -133,7 +131,6 @@
 		EC04656F1713BB84001B39B2 = {
 			isa = PBXGroup;
 			children = (
-				ECBD9D7417A0F47D00B69801 /* config.plist */,
 				ECA616D51717A0A200B118A0 /* libsqlite3.dylib */,
 				ECEFED6E1713E7BF00335E9E /* QuartzCore.framework */,
 				EC0465811713BB84001B39B2 /* DoItEveryDay */,
@@ -343,7 +340,6 @@
 				EC1C2CE21720CC3F009FED9C /* config@2x.png in Resources */,
 				EC22BC8E1728F1E700586493 /* done@2x.png in Resources */,
 				EC22BC8F1728F1E700586493 /* edit@2x.png in Resources */,
-				ECBD9D7517A0F47D00B69801 /* config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

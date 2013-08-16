@@ -29,24 +29,32 @@
     // Do any additional setup after loading the view from its nib.
     
     // read plist
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"];
-    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsDir = documentPaths[0];
+    NSString *filePathInDocsDir = [docsDir stringByAppendingPathComponent:@"config.plist"];
+    NSDictionary *data = [[NSDictionary alloc] initWithContentsOfFile:filePathInDocsDir];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     
-    if ([[data objectForKey: @"myGoal"] length] != 0)
-    {
-        [self.goalTextField setText:[data objectForKey: @"myGoal"]];
-    }
-    
-    if ([[data objectForKey:@"isClockOn"] boolValue]) {
+    if (![fileManager fileExistsAtPath:filePathInDocsDir]) {
         self.clockSwitch.on = YES;
         self.clockTimePicker.hidden = NO;
     } else {
-        self.clockSwitch.on = NO;
-        self.clockTimePicker.hidden = YES;
+        if ([[data objectForKey: @"myGoal"] length] != 0)
+        {
+            [self.goalTextField setText:[data objectForKey: @"myGoal"]];
+        }
+        
+        if ([[data objectForKey:@"isClockOn"] boolValue]) {
+            self.clockSwitch.on = YES;
+            self.clockTimePicker.hidden = NO;
+        } else {
+            self.clockSwitch.on = NO;
+            self.clockTimePicker.hidden = YES;
+        }
+        
+        NSDate *selectedTime = [data objectForKey:@"clockTime"];
+        [self.clockTimePicker setDate:selectedTime];
     }
-    
-    NSDate *selectedTime = [data objectForKey:@"clockTime"];
-    [self.clockTimePicker setDate:selectedTime];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,9 +90,10 @@
 }
 
 - (IBAction)saveGoal:(id)sender {
-    // read plist
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"];
-    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsDir = documentPaths[0];
+    NSString *filePathInDocsDir = [docsDir stringByAppendingPathComponent:@"config.plist"];
+    NSLog(@"file path: %@", filePathInDocsDir);
     
     // localNotification
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
@@ -99,11 +108,14 @@
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
     }
     
-    // write plist
-    [data setObject:[self.goalTextField text] forKey:@"myGoal"];
-    [data setObject:[NSNumber numberWithBool:self.clockSwitch.isOn] forKey:@"isClockOn"];
-    [data setObject:[self.clockTimePicker date] forKey:@"clockTime"];
-    [data writeToFile:plistPath atomically:YES];
+    // write to plist
+    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  [self.goalTextField text], @"myGoal",
+                                  [NSNumber numberWithBool:self.clockSwitch.isOn], @"isClockOn",
+                                  [self.clockTimePicker date], @"clockTime",
+                                  nil
+                                  ];
+    [data writeToFile:filePathInDocsDir atomically:YES];
     
     // exit
     [self.goalTextField resignFirstResponder];
