@@ -63,17 +63,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSDate *) tomorrowTime: (NSDate *) targetTime
-{
-    NSDateComponents* tomorrowComponents = [NSDateComponents new];
-    tomorrowComponents.day = 1;
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDate* tomorrow = [calendar dateByAddingComponents:tomorrowComponents toDate:targetTime options:0];
-    
-    NSDateComponents* tomorrowAtHourComponents = [calendar components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:tomorrow];
-    return [calendar dateFromComponents:tomorrowAtHourComponents];
-}
-
 #pragma mark - Actions
 
 - (IBAction)done:(id)sender
@@ -100,7 +89,7 @@
     if ([[self.goalTextField text] length] != 0 && self.clockSwitch.isOn) {
         UILocalNotification *localNotif = [[UILocalNotification alloc] init];
         if (localNotif == nil) return;
-        NSDate *fireTime = [self tomorrowTime:[self.clockTimePicker date]];
+        NSDate *fireTime = [self.clockTimePicker date];
         localNotif.fireDate = fireTime;
         localNotif.soundName = UILocalNotificationDefaultSoundName;
         localNotif.alertBody = [NSString stringWithFormat:@"你今天%@了吗？", [self.goalTextField text]];
