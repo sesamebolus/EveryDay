@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>每天一件事</string>
+	<string>每天坚持</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
@@ -15,9 +15,15 @@
 		<string>Icon.png</string>
 		<string>Icon@2x.png</string>
 		<string>Icon-72.png</string>
+		<string>Icon-72@2x.png</string>
 		<string>Icon-Small-50.png</string>
+		<string>Icon-Small-50@2x.png</string>
 		<string>Icon-Small.png</string>
 		<string>Icon-Small@2x.png</string>
+		<string>Icon-80.png</string>
+		<string>Icon-80@2x.png</string>
+		<string>Icon-120.png</string>
+		<string>Icon-120@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.alex.${PRODUCT_NAME:rfc1034identifier}</string>
