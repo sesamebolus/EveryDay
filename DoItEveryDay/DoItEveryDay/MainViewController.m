@@ -152,6 +152,16 @@
     // insert a record to database
     NSDate *today = [NSDate date];
     [self.dbAccess insertRecord:today];
+    
+    NSUInteger progress = [self.dbAccess getProgress] * 100 / 7;
+    if (progress >= 100) {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"太棒了！"
+                                                        message:@"你每天都坚持做到了！"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 - (void)endingAnimation
