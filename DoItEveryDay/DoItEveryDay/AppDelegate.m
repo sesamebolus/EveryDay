@@ -19,6 +19,11 @@
     self.mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     self.window.rootViewController = self.mainViewController;
     [self.window makeKeyAndVisible];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    }
+    
     return YES;
 }
 
