@@ -18,6 +18,7 @@
 -(void) closeDatabse;
 
 -(NSDate *) getLastRecord;
+-(NSUInteger) getTotalRecord;
 -(void) deleteRecordAtIndex: (NSInteger)index;
 -(void) insertRecord: (NSDate *)date;
 -(NSMutableArray *) getRecordList;

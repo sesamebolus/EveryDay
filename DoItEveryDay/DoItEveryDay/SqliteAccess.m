@@ -61,6 +61,12 @@
     return lastRecord;
 }
 
+-(NSUInteger) getTotalRecord
+{
+    NSUInteger count = [self.database intForQuery:@"select count(date) from log"];
+    return count;
+}
+
 -(void) deleteRecordAtIndex: (NSInteger)index
 {
     [self.database executeUpdate:@"delete from log where rowid = ?", [NSNumber numberWithInt:index]];

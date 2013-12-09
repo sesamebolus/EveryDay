@@ -26,6 +26,17 @@
     self.dbAccess = [[SqliteAccess alloc] init];
     [self.dbAccess openDatabase];
     self.dataArray = [self.dbAccess getRecordList];
+    
+    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [headerView setBackgroundColor:[UIColor colorWithRed:239/255.0f green:239/255.0f blue:244/255.0f alpha:1.0f]];
+    UILabel* totalLabel = [[UILabel alloc] initWithFrame:headerView.bounds];
+    [totalLabel setTextAlignment:NSTextAlignmentCenter];
+    [totalLabel setFont:[UIFont systemFontOfSize:15]];
+    [totalLabel setTextColor:[UIColor darkGrayColor]];
+    [totalLabel setText:[NSString stringWithFormat:@"共完成%u次", [self.dbAccess getTotalRecord]]];
+    [headerView addSubview:totalLabel];
+    [self.tableview setTableHeaderView:headerView];
+    
     [self.dbAccess closeDatabse];
 }
 
