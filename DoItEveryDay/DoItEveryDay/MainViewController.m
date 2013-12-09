@@ -45,15 +45,8 @@
 
 - (void)updateStatus
 {
-    // read plist
-    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docsDir = documentPaths[0];
-    NSString *filePathInDocsDir = [docsDir stringByAppendingPathComponent:@"config.plist"];
-    NSDictionary *data = [[NSDictionary alloc] initWithContentsOfFile:filePathInDocsDir];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSLog(@"%@", data);
-    
-    if (![fileManager fileExistsAtPath:filePathInDocsDir]) {
+    // read from NSUserDefaults
+    if (![[NSUserDefaults standardUserDefaults] stringForKey:@"myGoal"]) {
         NSLog(@"There is no goal.");
         [self.textLabel setText:@"请设定你的目标"];
         [self.clickButton setHidden:YES];
@@ -73,12 +66,12 @@
                 [self endingAnimation];
             } else {
                 NSLog(@"You havn't finished it today!");
-                [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [data objectForKey: @"myGoal"]]];
+                [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [[NSUserDefaults standardUserDefaults] stringForKey:@"myGoal"]]];
                 [self resetCLickButton];
             }
         } else {
             NSLog(@"First day, not finished.");
-            [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [data objectForKey: @"myGoal"]]];
+            [self.textLabel setText:[NSString stringWithFormat:@"你今天%@了吗？", [[NSUserDefaults standardUserDefaults] stringForKey:@"myGoal"]]];
             [self resetCLickButton];
         }
     }
@@ -155,12 +148,16 @@
     
     NSUInteger progress = [self.dbAccess getProgress] * 100 / 7;
     if (progress >= 100) {
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"太棒了！"
-                                                        message:@"你每天都坚持做到了！"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:@"everSuccess"]) {
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"恭喜你做到了！"
+                                                            message:[NSString stringWithFormat:@"在过去的一周里，你每天都坚持%@，做得非常好！",
+                                                                     [[NSUserDefaults standardUserDefaults] stringForKey:@"myGoal"]]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"确定"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everSuccess"];
+        }
     }
 }
 
