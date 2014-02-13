@@ -43,9 +43,7 @@
 		EC5BB9E118AC4F650007DB31 /* GlobalNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5BB9E018AC4F650007DB31 /* GlobalNavigationController.m */; };
 		EC77D9B6171FC20B00E65EC6 /* GoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */; };
 		EC77D9B7171FC20B00E65EC6 /* GoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */; };
-		EC77D9B9171FC89F00E65EC6 /* goal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9B8171FC89F00E65EC6 /* goal@2x.png */; };
 		EC77D9BE171FDC7100E65EC6 /* input@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9BC171FDC7100E65EC6 /* input@2x.png */; };
-		EC77D9BF171FDC7100E65EC6 /* submit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9BD171FDC7100E65EC6 /* submit@2x.png */; };
 		EC7BCA87171B986F00602364 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7BCA86171B986F00602364 /* backButton@2x.png */; };
 		ECA616D61717A0A200B118A0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA616D51717A0A200B118A0 /* libsqlite3.dylib */; };
 		ECA616E21717A13700B118A0 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA616D91717A13700B118A0 /* FMDatabase.m */; };
@@ -106,9 +104,7 @@
 		EC77D9B3171FC20B00E65EC6 /* GoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalViewController.h; sourceTree = "<group>"; };
 		EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalViewController.m; sourceTree = "<group>"; };
 		EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalViewController.xib; sourceTree = "<group>"; };
-		EC77D9B8171FC89F00E65EC6 /* goal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "goal@2x.png"; path = "Resources/goal@2x.png"; sourceTree = "<group>"; };
 		EC77D9BC171FDC7100E65EC6 /* input@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "input@2x.png"; path = "Resources/input@2x.png"; sourceTree = "<group>"; };
-		EC77D9BD171FDC7100E65EC6 /* submit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "submit@2x.png"; path = "Resources/submit@2x.png"; sourceTree = "<group>"; };
 		EC7BCA86171B986F00602364 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backButton@2x.png"; path = "Resources/backButton@2x.png"; sourceTree = "<group>"; };
 		ECA616D51717A0A200B118A0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		ECA616D81717A13700B118A0 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -266,9 +262,7 @@
 				EC22BC8C1728F1E700586493 /* done@2x.png */,
 				EC22BC8D1728F1E700586493 /* edit@2x.png */,
 				EC1C2CE11720CC3F009FED9C /* config@2x.png */,
-				EC77D9B8171FC89F00E65EC6 /* goal@2x.png */,
 				EC77D9BC171FDC7100E65EC6 /* input@2x.png */,
-				EC77D9BD171FDC7100E65EC6 /* submit@2x.png */,
 				EC7BCA86171B986F00602364 /* backButton@2x.png */,
 				ECE5339E17169F88004414B1 /* list@2x.png */,
 				ECE5339F17169F88004414B1 /* tick@2x.png */,
@@ -365,9 +359,7 @@
 				EC7BCA87171B986F00602364 /* backButton@2x.png in Resources */,
 				EC77D9B7171FC20B00E65EC6 /* GoalViewController.xib in Resources */,
 				EC1BCBC517F268C7002D9F77 /* Icon-Small-50.png in Resources */,
-				EC77D9B9171FC89F00E65EC6 /* goal@2x.png in Resources */,
 				EC77D9BE171FDC7100E65EC6 /* input@2x.png in Resources */,
-				EC77D9BF171FDC7100E65EC6 /* submit@2x.png in Resources */,
 				EC1BCBCB17F268C7002D9F77 /* iTunesArtwork.png in Resources */,
 				EC1C2CE21720CC3F009FED9C /* config@2x.png in Resources */,
 				EC22BC8E1728F1E700586493 /* done@2x.png in Resources */,
