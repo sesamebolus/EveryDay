@@ -30,7 +30,9 @@
     
     // nav bar
     self.title = @"设定目标";
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImage:[UIImage imageNamed:@"backButton"] target:self action:@selector(backHandler)];
+    if ([[NSUserDefaults standardUserDefaults] stringForKey:@"myGoal"]) {
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImage:[UIImage imageNamed:@"backButton"] target:self action:@selector(backHandler)];
+    }
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithTitle:@"确定" target:self action:@selector(saveGoal)];
     
     // read from NSUserDefaults
@@ -91,7 +93,8 @@
     }
     
     // write to NSUserDefaults
-    [[NSUserDefaults standardUserDefaults] setObject:[self.goalTextField text] forKey:@"myGoal"];
+    NSString *goalString = [[self.goalTextField text] isEqualToString:@"例如：运动、泡脚"] ? @"运动" : [self.goalTextField text];
+    [[NSUserDefaults standardUserDefaults] setObject:goalString forKey:@"myGoal"];
     [[NSUserDefaults standardUserDefaults] setBool:self.clockSwitch.isOn forKey:@"isClockOn"];
     [[NSUserDefaults standardUserDefaults] setObject:[self.clockTimePicker date] forKey:@"clockTime"];
     
