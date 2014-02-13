@@ -10,18 +10,12 @@
 
 @class GoalViewController;
 
-@protocol GoalViewControllerDelegate
-- (void)GoalViewControllerDidFinish:(GoalViewController *)controller;
-@end
-
 @interface GoalViewController : UIViewController
 
-@property (weak, nonatomic) id <GoalViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *goalTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *clockSwitch;
 @property (weak, nonatomic) IBOutlet UIDatePicker *clockTimePicker;
 
-- (IBAction)saveGoal:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
 - (IBAction)clockSwitchChanged:(id)sender;
 

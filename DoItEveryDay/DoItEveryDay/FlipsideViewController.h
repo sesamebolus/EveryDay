@@ -11,18 +11,10 @@
 
 @class FlipsideViewController;
 
-@protocol FlipsideViewControllerDelegate
-- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
-@end
-
 @interface FlipsideViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) id <FlipsideViewControllerDelegate> delegate;
 @property (nonatomic, retain) SqliteAccess *dbAccess;
 @property (nonatomic, retain) NSMutableArray *dataArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-
-- (IBAction)done:(id)sender;
-- (IBAction)tableViewEdit:(id)sender;
 
 @end

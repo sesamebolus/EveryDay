@@ -39,6 +39,8 @@
 		EC22BC8E1728F1E700586493 /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22BC8C1728F1E700586493 /* done@2x.png */; };
 		EC22BC8F1728F1E700586493 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22BC8D1728F1E700586493 /* edit@2x.png */; };
 		EC22BC9217291C4B00586493 /* LogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22BC9117291C4B00586493 /* LogItem.m */; };
+		EC4C58C918AB795600FD9507 /* GloabalUI.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C58C818AB795600FD9507 /* GloabalUI.m */; };
+		EC5BB9E118AC4F650007DB31 /* GlobalNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5BB9E018AC4F650007DB31 /* GlobalNavigationController.m */; };
 		EC77D9B6171FC20B00E65EC6 /* GoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */; };
 		EC77D9B7171FC20B00E65EC6 /* GoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */; };
 		EC77D9B9171FC89F00E65EC6 /* goal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9B8171FC89F00E65EC6 /* goal@2x.png */; };
@@ -97,6 +99,10 @@
 		EC22BC8D1728F1E700586493 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "edit@2x.png"; path = "Resources/edit@2x.png"; sourceTree = "<group>"; };
 		EC22BC9017291C4B00586493 /* LogItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogItem.h; sourceTree = "<group>"; };
 		EC22BC9117291C4B00586493 /* LogItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogItem.m; sourceTree = "<group>"; };
+		EC4C58C718AB795600FD9507 /* GloabalUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GloabalUI.h; sourceTree = "<group>"; };
+		EC4C58C818AB795600FD9507 /* GloabalUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GloabalUI.m; sourceTree = "<group>"; };
+		EC5BB9DF18AC4F650007DB31 /* GlobalNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalNavigationController.h; sourceTree = "<group>"; };
+		EC5BB9E018AC4F650007DB31 /* GlobalNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalNavigationController.m; sourceTree = "<group>"; };
 		EC77D9B3171FC20B00E65EC6 /* GoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalViewController.h; sourceTree = "<group>"; };
 		EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalViewController.m; sourceTree = "<group>"; };
 		EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalViewController.xib; sourceTree = "<group>"; };
@@ -227,6 +233,10 @@
 		EC9231C1172A0CC700F65FC8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EC4C58C718AB795600FD9507 /* GloabalUI.h */,
+				EC4C58C818AB795600FD9507 /* GloabalUI.m */,
+				EC5BB9DF18AC4F650007DB31 /* GlobalNavigationController.h */,
+				EC5BB9E018AC4F650007DB31 /* GlobalNavigationController.m */,
 				EC0465931713BB84001B39B2 /* MainViewController.h */,
 				EC0465941713BB84001B39B2 /* MainViewController.m */,
 				EC0465991713BB84001B39B2 /* MainViewController.xib */,
@@ -380,11 +390,13 @@
 				EC0465981713BB84001B39B2 /* FlipsideViewController.m in Sources */,
 				ECA616E21717A13700B118A0 /* FMDatabase.m in Sources */,
 				ECA616E31717A13700B118A0 /* FMDatabaseAdditions.m in Sources */,
+				EC4C58C918AB795600FD9507 /* GloabalUI.m in Sources */,
 				ECA616E41717A13700B118A0 /* FMDatabasePool.m in Sources */,
 				ECA616E51717A13700B118A0 /* FMDatabaseQueue.m in Sources */,
 				ECA616E61717A13700B118A0 /* FMResultSet.m in Sources */,
 				EC77D9B6171FC20B00E65EC6 /* GoalViewController.m in Sources */,
 				EC1C2CE517210452009FED9C /* SqliteAccess.m in Sources */,
+				EC5BB9E118AC4F650007DB31 /* GlobalNavigationController.m in Sources */,
 				EC22BC9217291C4B00586493 /* LogItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

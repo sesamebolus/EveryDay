@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "GloabalUI.h"
 #import "MainViewController.h"
 
 @implementation AppDelegate
@@ -20,10 +20,8 @@
     self.window.rootViewController = self.mainViewController;
     [self.window makeKeyAndVisible];
     
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    }
-    
+    if (IOS7_OR_LATER) [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+     
     return YES;
 }
 
@@ -48,7 +46,6 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [self.mainViewController drawGradientLayer];
-    [self.mainViewController updateStatus];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

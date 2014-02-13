@@ -7,7 +7,7 @@
 //
 
 #import "FlipsideViewController.h"
-#import "SqliteAccess.h"
+#import "GloabalUI.h"
 #import "LogItem.h"
 
 @interface FlipsideViewController ()
@@ -21,12 +21,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
+    // nav bar
+    self.title = @"历史记录";
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImage:[UIImage imageNamed:@"backButton"] target:self action:@selector(backHandler)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImage:[UIImage imageNamed:@"edit"] target:self action:@selector(editHandler:)];
+    
+    // database
     self.dbAccess = [[SqliteAccess alloc] init];
     [self.dbAccess openDatabase];
     self.dataArray = [self.dbAccess getRecordList];
     
+    // header view
     UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     [headerView setBackgroundColor:[UIColor colorWithRed:239/255.0f green:239/255.0f blue:244/255.0f alpha:1.0f]];
     UILabel* totalLabel = [[UILabel alloc] initWithFrame:headerView.bounds];
@@ -36,6 +42,8 @@
     [totalLabel setText:[NSString stringWithFormat:@"共完成%u次", [self.dbAccess getTotalRecord]]];
     [headerView addSubview:totalLabel];
     [self.tableview setTableHeaderView:headerView];
+    
+    // footer view
     
     [self.dbAccess closeDatabse];
 }
@@ -48,18 +56,18 @@
 
 #pragma mark - Actions
 
-- (IBAction)done:(id)sender
+- (void)backHandler
 {
-    [self.delegate flipsideViewControllerDidFinish:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)tableViewEdit:(id)sender
+- (void)editHandler:(id)sender
 {
     [self.tableview setEditing:!self.tableview.editing animated:YES];
     if (self.tableview.editing) {
-        [sender setImage:[UIImage imageNamed:@"done@2x.png"] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"done"] forState:UIControlStateNormal];
     } else {
-        [sender setImage:[UIImage imageNamed:@"edit@2x.png"] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"edit"] forState:UIControlStateNormal];
     }
 
 }

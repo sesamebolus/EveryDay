@@ -7,6 +7,7 @@
 //
 
 #import "GoalViewController.h"
+#import "GloabalUI.h"
 
 @interface GoalViewController ()
 
@@ -26,7 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    // nav bar
+    self.title = @"设定目标";
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImage:[UIImage imageNamed:@"backButton"] target:self action:@selector(backHandler)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithTitle:@"确定" target:self action:@selector(saveGoal)];
     
     // read from NSUserDefaults
     if (![[NSUserDefaults standardUserDefaults] stringForKey:@"myGoal"]) {
@@ -58,9 +63,9 @@
 
 #pragma mark - Actions
 
-- (IBAction)done:(id)sender
+- (void)backHandler
 {
-    [self.delegate GoalViewControllerDidFinish:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)dismissKeyboard:(id)sender {
@@ -71,7 +76,7 @@
     self.clockTimePicker.hidden = !self.clockSwitch.isOn;
 }
 
-- (IBAction)saveGoal:(id)sender {
+- (void)saveGoal {
     // localNotification
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     if ([[self.goalTextField text] length] != 0 && self.clockSwitch.isOn) {
@@ -92,7 +97,7 @@
     
     // exit
     [self.goalTextField resignFirstResponder];
-    [self done:nil];
+    [self backHandler];
 }
 
 #pragma mark - Unload

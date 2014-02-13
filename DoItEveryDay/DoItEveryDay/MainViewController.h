@@ -7,13 +7,9 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "FlipsideViewController.h"
-#import "GoalViewController.h"
 #import "SqliteAccess.h"
 
-#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0f]
-
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, GoalViewControllerDelegate>
+@interface MainViewController : UIViewController
 
 @property (nonatomic, retain) CAGradientLayer *gradient;
 @property (nonatomic, retain) SqliteAccess *dbAccess;

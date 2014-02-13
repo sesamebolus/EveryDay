@@ -7,13 +7,22 @@
 //
 
 #import "MainViewController.h"
-#import "SqliteAccess.h"
+#import "GlobalNavigationController.h"
+#import "GloabalUI.h"
+#import "FlipsideViewController.h"
+#import "GoalViewController.h"
 
 @interface MainViewController ()
 
 @end
 
 @implementation MainViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self updateStatus];
+}
 
 - (void)viewDidLoad
 {
@@ -200,32 +209,18 @@
 
 #pragma mark - Flipside View and Goal View
 
-- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self updateStatus];
-}
-
 - (IBAction)showInfo:(id)sender
 {    
     FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideViewController" bundle:nil];
-    controller.delegate = self;
-    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController:controller animated:YES completion:nil];
-}
-
-- (void)GoalViewControllerDidFinish:(GoalViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self updateStatus];
+    GlobalNavigationController *navigation = [[GlobalNavigationController alloc] initWithRootViewController:controller];
+    [self presentViewController:navigation animated:YES completion:nil];
 }
 
 - (IBAction)showGoal:(id)sender
 {
     GoalViewController *controller = [[GoalViewController alloc] initWithNibName:@"GoalViewController" bundle:nil];
-    controller.delegate = self;
-    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController:controller animated:YES completion:nil];
+    GlobalNavigationController *navigation = [[GlobalNavigationController alloc] initWithRootViewController:controller];
+    [self presentViewController:navigation animated:YES completion:nil];
 }
 
 #pragma mark - Unload
