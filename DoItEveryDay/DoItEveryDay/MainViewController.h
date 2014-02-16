@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 
-- (IBAction)showInfo:(id)sender;
+- (IBAction)showMenu:(id)sender;
 - (IBAction)submitButton:(id)sender;
 
 - (void)drawGradientLayer;

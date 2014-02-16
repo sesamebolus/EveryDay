@@ -45,6 +45,7 @@
 		EC77D9B7171FC20B00E65EC6 /* GoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */; };
 		EC77D9BE171FDC7100E65EC6 /* input@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9BC171FDC7100E65EC6 /* input@2x.png */; };
 		EC7BCA87171B986F00602364 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC7BCA86171B986F00602364 /* backButton@2x.png */; };
+		ECA4994D18AF787700ED7961 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA4994C18AF787700ED7961 /* MenuViewController.m */; };
 		ECA616D61717A0A200B118A0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA616D51717A0A200B118A0 /* libsqlite3.dylib */; };
 		ECA616E21717A13700B118A0 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA616D91717A13700B118A0 /* FMDatabase.m */; };
 		ECA616E31717A13700B118A0 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA616DB1717A13700B118A0 /* FMDatabaseAdditions.m */; };
@@ -106,6 +107,8 @@
 		EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalViewController.xib; sourceTree = "<group>"; };
 		EC77D9BC171FDC7100E65EC6 /* input@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "input@2x.png"; path = "Resources/input@2x.png"; sourceTree = "<group>"; };
 		EC7BCA86171B986F00602364 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backButton@2x.png"; path = "Resources/backButton@2x.png"; sourceTree = "<group>"; };
+		ECA4994B18AF787700ED7961 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		ECA4994C18AF787700ED7961 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		ECA616D51717A0A200B118A0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		ECA616D81717A13700B118A0 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		ECA616D91717A13700B118A0 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 				EC77D9B3171FC20B00E65EC6 /* GoalViewController.h */,
 				EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */,
 				EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */,
+				ECA4994B18AF787700ED7961 /* MenuViewController.h */,
+				ECA4994C18AF787700ED7961 /* MenuViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 				EC04658C1713BB84001B39B2 /* AppDelegate.m in Sources */,
 				EC0465951713BB84001B39B2 /* MainViewController.m in Sources */,
 				EC0465981713BB84001B39B2 /* FlipsideViewController.m in Sources */,
+				ECA4994D18AF787700ED7961 /* MenuViewController.m in Sources */,
 				ECA616E21717A13700B118A0 /* FMDatabase.m in Sources */,
 				ECA616E31717A13700B118A0 /* FMDatabaseAdditions.m in Sources */,
 				EC4C58C918AB795600FD9507 /* GloabalUI.m in Sources */,

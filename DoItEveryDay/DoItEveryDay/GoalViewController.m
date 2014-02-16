@@ -67,7 +67,7 @@
 
 - (void)backHandler
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)dismissKeyboard:(id)sender {

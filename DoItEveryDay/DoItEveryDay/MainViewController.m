@@ -9,7 +9,7 @@
 #import "MainViewController.h"
 #import "GlobalNavigationController.h"
 #import "GloabalUI.h"
-#import "FlipsideViewController.h"
+#import "MenuViewController.h"
 #import "GoalViewController.h"
 
 @interface MainViewController ()
@@ -59,7 +59,7 @@
         NSLog(@"There is no goal.");
         [self.textLabel setText:@"请设定你的目标"];
         [self.clickButton setHidden:YES];
-        [self performSelector:NSSelectorFromString(@"showGoal:") withObject:nil afterDelay:1];
+        [self performSelector:NSSelectorFromString(@"showGoal") withObject:nil afterDelay:1];
     } else {
         NSLog(@"I do have a goal.");
         if ([self.dbAccess getLastRecord] != NULL) {
@@ -209,14 +209,14 @@
 
 #pragma mark - Flipside View and Goal View
 
-- (IBAction)showInfo:(id)sender
+- (IBAction)showMenu:(id)sender
 {    
-    FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideViewController" bundle:nil];
+    MenuViewController *controller = [[MenuViewController alloc] init];
     GlobalNavigationController *navigation = [[GlobalNavigationController alloc] initWithRootViewController:controller];
     [self presentViewController:navigation animated:YES completion:nil];
 }
 
-- (IBAction)showGoal:(id)sender
+- (void)showGoal
 {
     GoalViewController *controller = [[GoalViewController alloc] initWithNibName:@"GoalViewController" bundle:nil];
     GlobalNavigationController *navigation = [[GlobalNavigationController alloc] initWithRootViewController:controller];

@@ -58,7 +58,7 @@
 
 - (void)backHandler
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)editHandler:(id)sender
