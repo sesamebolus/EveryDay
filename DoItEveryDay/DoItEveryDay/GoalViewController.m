@@ -67,7 +67,12 @@
 
 - (void)backHandler
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    NSInteger index = [[self.navigationController viewControllers] indexOfObject:self];
+    if (index) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [self dismissModalViewControllerAnimated:YES];
+    }
 }
 
 - (IBAction)dismissKeyboard:(id)sender {
