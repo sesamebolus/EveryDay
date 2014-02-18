@@ -1,4 +1,5 @@
 PODS:
+  - CKCalendar (1.0.0)
   - FMDB (2.2):
     - FMDB/standard
   - FMDB/common (2.2)
@@ -6,9 +7,11 @@ PODS:
     - FMDB/common
 
 DEPENDENCIES:
+  - CKCalendar
   - FMDB
 
 SPEC CHECKSUMS:
+  CKCalendar: c8a377cc0ddd24cef51bd45aa0c25abbcaa3d92b
   FMDB: 97472cfacf0d9e445e915704fb43b4b142799c36
 
 COCOAPODS: 0.29.0

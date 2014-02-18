@@ -26,11 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.origin.y, 320, self.view.frame.size.height - 64)];
-    label.text = @"calendar";
-    label.textAlignment = UITextAlignmentCenter;
-    label.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:label];
+    
+    CKCalendarView *calendar = [[CKCalendarView alloc] init];
+    [self.view addSubview:calendar];
+    calendar.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
