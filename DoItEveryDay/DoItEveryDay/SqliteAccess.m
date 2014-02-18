@@ -83,7 +83,7 @@
 -(NSMutableArray *) getRecordList
 {
     NSMutableArray *dataArray = [[NSMutableArray alloc] init];
-    FMResultSet *results = [self.database executeQuery:@"select rowid, * from log order by date desc limit 30"];
+    FMResultSet *results = [self.database executeQuery:@"select rowid, * from log order by date desc"];
     while([results next]) {
         LogItem *logItem = [[LogItem alloc] init];
         logItem.rowid = [results intForColumn:@"rowid"];

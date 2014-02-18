@@ -9,7 +9,7 @@
 #import "MainViewController.h"
 #import "GlobalNavigationController.h"
 #import "GloabalUI.h"
-#import "FlipsideViewController.h"
+#import "HistoryViewController.h"
 #import "GoalViewController.h"
 
 @interface MainViewController ()
@@ -211,7 +211,7 @@
 
 - (IBAction)showInfo:(id)sender
 {    
-    FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideViewController" bundle:nil];
+    HistoryViewController *controller = [[HistoryViewController alloc] init];
     GlobalNavigationController *navigation = [[GlobalNavigationController alloc] initWithRootViewController:controller];
     [self presentViewController:navigation animated:YES completion:nil];
 }

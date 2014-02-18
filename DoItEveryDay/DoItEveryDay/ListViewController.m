@@ -1,32 +1,24 @@
 //
-//  FlipsideViewController.m
+//  ListViewController.m
 //  DoItEveryDay
 //
-//  Created by 张 智超 on 13-4-9.
-//  Copyright (c) 2013年 张 智超. All rights reserved.
+//  Created by 张智超 on 14-2-18.
+//  Copyright (c) 2014年 张 智超. All rights reserved.
 //
 
-#import "FlipsideViewController.h"
-#import "GloabalUI.h"
+#import "ListViewController.h"
 #import "LogItem.h"
 
-@interface FlipsideViewController ()
+@interface ListViewController ()
 
 @end
 
-@implementation FlipsideViewController
-
-//@synthesize dataArray;
+@implementation ListViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // nav bar
-    self.title = @"历史记录";
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImage:[UIImage imageNamed:@"backButton"] target:self action:@selector(backHandler)];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImage:[UIImage imageNamed:@"edit"] target:self action:@selector(editHandler:)];
-    
+
     // database
     self.dbAccess = [[SqliteAccess alloc] init];
     [self.dbAccess openDatabase];
@@ -41,7 +33,7 @@
     [totalLabel setTextColor:[UIColor darkGrayColor]];
     [totalLabel setText:[NSString stringWithFormat:@"共完成%u次", [self.dbAccess getTotalRecord]]];
     [headerView addSubview:totalLabel];
-    [self.tableview setTableHeaderView:headerView];
+    [self.tableView setTableHeaderView:headerView];
     
     // footer view
     
@@ -54,46 +46,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Actions
+#pragma mark - Table view data source
 
-- (void)backHandler
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)editHandler:(id)sender
-{
-    [self.tableview setEditing:!self.tableview.editing animated:YES];
-    if (self.tableview.editing) {
-        [sender setImage:[UIImage imageNamed:@"done"] forState:UIControlStateNormal];
-    } else {
-        [sender setImage:[UIImage imageNamed:@"edit"] forState:UIControlStateNormal];
-    }
-
-}
-
-#pragma mark - tableview
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.dataArray count];
 }
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        [cell.textLabel setTextColor:[UIColor colorWithRed:51/255.0f green:51/255.0f blue:51/255.0f alpha:1.0f]];
+        [cell.textLabel setFont:[UIFont systemFontOfSize:18]];
     }
     
     LogItem *logItem = [self.dataArray objectAtIndex:indexPath.row];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy年M月d日 (EEEE) HH:mm"];
-    [cell.textLabel setText:
-        [[NSString alloc] initWithFormat:@"%@", [dateFormat stringFromDate: logItem.date]]
-    ];
-    [cell.textLabel setTextColor:[UIColor colorWithRed:51/255.0f green:51/255.0f blue:51/255.0f alpha:1.0f]];
-    [cell.textLabel setFont:[UIFont systemFontOfSize:18]];
+    [cell.textLabel setText:[[NSString alloc] initWithFormat:@"%@", [dateFormat stringFromDate: logItem.date]]];
+    
     return cell;
 }
 
@@ -110,13 +85,7 @@
     
     [self.dataArray removeObjectAtIndex:indexPath.row];
     NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
-    [self.tableview deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
 }
 
-#pragma mark - unload
-
-- (void)viewDidUnload {
-    [self setTableview:nil];
-    [super viewDidUnload];
-}
 @end

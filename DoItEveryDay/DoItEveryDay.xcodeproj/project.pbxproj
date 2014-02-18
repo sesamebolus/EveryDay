@@ -18,9 +18,7 @@
 		EC0465901713BB84001B39B2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC04658F1713BB84001B39B2 /* Default@2x.png */; };
 		EC0465921713BB84001B39B2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0465911713BB84001B39B2 /* Default-568h@2x.png */; };
 		EC0465951713BB84001B39B2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0465941713BB84001B39B2 /* MainViewController.m */; };
-		EC0465981713BB84001B39B2 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0465971713BB84001B39B2 /* FlipsideViewController.m */; };
 		EC04659B1713BB84001B39B2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0465991713BB84001B39B2 /* MainViewController.xib */; };
-		EC04659E1713BB84001B39B2 /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */; };
 		EC1BCBBF17F268C7002D9F77 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1BCBB117F268C7002D9F77 /* Icon-120.png */; };
 		EC1BCBC017F268C7002D9F77 /* Icon-120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1BCBB217F268C7002D9F77 /* Icon-120@2x.png */; };
 		EC1BCBC117F268C7002D9F77 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1BCBB317F268C7002D9F77 /* Icon-72.png */; };
@@ -42,6 +40,9 @@
 		EC22BC9217291C4B00586493 /* LogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22BC9117291C4B00586493 /* LogItem.m */; };
 		EC4C58C918AB795600FD9507 /* GloabalUI.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C58C818AB795600FD9507 /* GloabalUI.m */; };
 		EC5BB9E118AC4F650007DB31 /* GlobalNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5BB9E018AC4F650007DB31 /* GlobalNavigationController.m */; };
+		EC65510D18B321EC0084C8E3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC65510C18B321EC0084C8E3 /* HistoryViewController.m */; };
+		EC65511018B326B70084C8E3 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC65510F18B326B70084C8E3 /* ListViewController.m */; };
+		EC65511318B32D050084C8E3 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC65511218B32D050084C8E3 /* CalendarViewController.m */; };
 		EC77D9B6171FC20B00E65EC6 /* GoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */; };
 		EC77D9B7171FC20B00E65EC6 /* GoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */; };
 		EC77D9BE171FDC7100E65EC6 /* input@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC77D9BC171FDC7100E65EC6 /* input@2x.png */; };
@@ -69,10 +70,7 @@
 		EC0465911713BB84001B39B2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EC0465931713BB84001B39B2 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		EC0465941713BB84001B39B2 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		EC0465961713BB84001B39B2 /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
-		EC0465971713BB84001B39B2 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		EC04659A1713BB84001B39B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
-		EC04659D1713BB84001B39B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
 		EC1BCBB117F268C7002D9F77 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
 		EC1BCBB217F268C7002D9F77 /* Icon-120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120@2x.png"; sourceTree = "<group>"; };
 		EC1BCBB317F268C7002D9F77 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -98,6 +96,12 @@
 		EC4C58C818AB795600FD9507 /* GloabalUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GloabalUI.m; sourceTree = "<group>"; };
 		EC5BB9DF18AC4F650007DB31 /* GlobalNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalNavigationController.h; sourceTree = "<group>"; };
 		EC5BB9E018AC4F650007DB31 /* GlobalNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalNavigationController.m; sourceTree = "<group>"; };
+		EC65510B18B321EC0084C8E3 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		EC65510C18B321EC0084C8E3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		EC65510E18B326B70084C8E3 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		EC65510F18B326B70084C8E3 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		EC65511118B32D050084C8E3 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		EC65511218B32D050084C8E3 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		EC77D9B3171FC20B00E65EC6 /* GoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalViewController.h; sourceTree = "<group>"; };
 		EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalViewController.m; sourceTree = "<group>"; };
 		EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoalViewController.xib; sourceTree = "<group>"; };
@@ -226,9 +230,12 @@
 				EC0465931713BB84001B39B2 /* MainViewController.h */,
 				EC0465941713BB84001B39B2 /* MainViewController.m */,
 				EC0465991713BB84001B39B2 /* MainViewController.xib */,
-				EC0465961713BB84001B39B2 /* FlipsideViewController.h */,
-				EC0465971713BB84001B39B2 /* FlipsideViewController.m */,
-				EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */,
+				EC65510B18B321EC0084C8E3 /* HistoryViewController.h */,
+				EC65510C18B321EC0084C8E3 /* HistoryViewController.m */,
+				EC65511118B32D050084C8E3 /* CalendarViewController.h */,
+				EC65511218B32D050084C8E3 /* CalendarViewController.m */,
+				EC65510E18B326B70084C8E3 /* ListViewController.h */,
+				EC65510F18B326B70084C8E3 /* ListViewController.m */,
 				EC77D9B3171FC20B00E65EC6 /* GoalViewController.h */,
 				EC77D9B4171FC20B00E65EC6 /* GoalViewController.m */,
 				EC77D9B5171FC20B00E65EC6 /* GoalViewController.xib */,
@@ -322,7 +329,6 @@
 				EC1BCBC317F268C7002D9F77 /* Icon-80.png in Resources */,
 				EC04659B1713BB84001B39B2 /* MainViewController.xib in Resources */,
 				EC1BCBC717F268C7002D9F77 /* Icon-Small.png in Resources */,
-				EC04659E1713BB84001B39B2 /* FlipsideViewController.xib in Resources */,
 				EC1BCBCC17F268C7002D9F77 /* iTunesArtwork@2x.png in Resources */,
 				EC1BCBC417F268C7002D9F77 /* Icon-80@2x.png in Resources */,
 				EC1BCBCA17F268C7002D9F77 /* Icon@2x.png in Resources */,
@@ -386,13 +392,15 @@
 			files = (
 				EC0465881713BB84001B39B2 /* main.m in Sources */,
 				EC04658C1713BB84001B39B2 /* AppDelegate.m in Sources */,
+				EC65511018B326B70084C8E3 /* ListViewController.m in Sources */,
 				EC0465951713BB84001B39B2 /* MainViewController.m in Sources */,
-				EC0465981713BB84001B39B2 /* FlipsideViewController.m in Sources */,
+				EC65510D18B321EC0084C8E3 /* HistoryViewController.m in Sources */,
 				EC4C58C918AB795600FD9507 /* GloabalUI.m in Sources */,
 				EC77D9B6171FC20B00E65EC6 /* GoalViewController.m in Sources */,
 				EC1C2CE517210452009FED9C /* SqliteAccess.m in Sources */,
 				EC5BB9E118AC4F650007DB31 /* GlobalNavigationController.m in Sources */,
 				EC22BC9217291C4B00586493 /* LogItem.m in Sources */,
+				EC65511318B32D050084C8E3 /* CalendarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,14 +421,6 @@
 				EC04659A1713BB84001B39B2 /* en */,
 			);
 			name = MainViewController.xib;
-			sourceTree = "<group>";
-		};
-		EC04659C1713BB84001B39B2 /* FlipsideViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC04659D1713BB84001B39B2 /* en */,
-			);
-			name = FlipsideViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -489,7 +489,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoItEveryDay/DoItEveryDay-Prefix.pch";
 				INFOPLIST_FILE = "DoItEveryDay/DoItEveryDay-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = everyday;
 				WRAPPER_EXTENSION = app;
 			};
@@ -502,7 +502,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoItEveryDay/DoItEveryDay-Prefix.pch";
 				INFOPLIST_FILE = "DoItEveryDay/DoItEveryDay-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = everyday;
 				WRAPPER_EXTENSION = app;
 			};
