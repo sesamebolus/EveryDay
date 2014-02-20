@@ -39,6 +39,13 @@
 		EC22BC8F1728F1E700586493 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22BC8D1728F1E700586493 /* edit@2x.png */; };
 		EC22BC9217291C4B00586493 /* LogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EC22BC9117291C4B00586493 /* LogItem.m */; };
 		EC4C58C918AB795600FD9507 /* GloabalUI.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C58C818AB795600FD9507 /* GloabalUI.m */; };
+		EC4C8F8418B58C5500BC0C84 /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8F7218B58C5500BC0C84 /* NSDate+convenience.m */; };
+		EC4C8F8518B58C5500BC0C84 /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8F7418B58C5500BC0C84 /* NSMutableArray+convenience.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EC4C8F8618B58C5500BC0C84 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8F7618B58C5500BC0C84 /* UIColor+expanded.m */; };
+		EC4C8F8718B58C5500BC0C84 /* UIView+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8F7818B58C5500BC0C84 /* UIView+convenience.m */; };
+		EC4C8F8818B58C5500BC0C84 /* VRGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8F7A18B58C5500BC0C84 /* VRGAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EC4C8F8918B58C5500BC0C84 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8F7C18B58C5500BC0C84 /* VRGCalendarView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EC4C8F8A18B58C5500BC0C84 /* VRGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C8F7E18B58C5500BC0C84 /* VRGViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EC5BB9E118AC4F650007DB31 /* GlobalNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5BB9E018AC4F650007DB31 /* GlobalNavigationController.m */; };
 		EC65510D18B321EC0084C8E3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC65510C18B321EC0084C8E3 /* HistoryViewController.m */; };
 		EC65511018B326B70084C8E3 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC65510F18B326B70084C8E3 /* ListViewController.m */; };
@@ -94,6 +101,20 @@
 		EC22BC9117291C4B00586493 /* LogItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogItem.m; sourceTree = "<group>"; };
 		EC4C58C718AB795600FD9507 /* GloabalUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GloabalUI.h; sourceTree = "<group>"; };
 		EC4C58C818AB795600FD9507 /* GloabalUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GloabalUI.m; sourceTree = "<group>"; };
+		EC4C8F7118B58C5500BC0C84 /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
+		EC4C8F7218B58C5500BC0C84 /* NSDate+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+convenience.m"; sourceTree = "<group>"; };
+		EC4C8F7318B58C5500BC0C84 /* NSMutableArray+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+convenience.h"; sourceTree = "<group>"; };
+		EC4C8F7418B58C5500BC0C84 /* NSMutableArray+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+convenience.m"; sourceTree = "<group>"; };
+		EC4C8F7518B58C5500BC0C84 /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
+		EC4C8F7618B58C5500BC0C84 /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
+		EC4C8F7718B58C5500BC0C84 /* UIView+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+convenience.h"; sourceTree = "<group>"; };
+		EC4C8F7818B58C5500BC0C84 /* UIView+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+convenience.m"; sourceTree = "<group>"; };
+		EC4C8F7918B58C5500BC0C84 /* VRGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRGAppDelegate.h; sourceTree = "<group>"; };
+		EC4C8F7A18B58C5500BC0C84 /* VRGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGAppDelegate.m; sourceTree = "<group>"; };
+		EC4C8F7B18B58C5500BC0C84 /* VRGCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRGCalendarView.h; sourceTree = "<group>"; };
+		EC4C8F7C18B58C5500BC0C84 /* VRGCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGCalendarView.m; sourceTree = "<group>"; };
+		EC4C8F7D18B58C5500BC0C84 /* VRGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRGViewController.h; sourceTree = "<group>"; };
+		EC4C8F7E18B58C5500BC0C84 /* VRGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGViewController.m; sourceTree = "<group>"; };
 		EC5BB9DF18AC4F650007DB31 /* GlobalNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalNavigationController.h; sourceTree = "<group>"; };
 		EC5BB9E018AC4F650007DB31 /* GlobalNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalNavigationController.m; sourceTree = "<group>"; };
 		EC65510B18B321EC0084C8E3 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
@@ -165,6 +186,7 @@
 		EC0465811713BB84001B39B2 /* DoItEveryDay */ = {
 			isa = PBXGroup;
 			children = (
+				EC4C8F6B18B58C5500BC0C84 /* Vurig Calendar */,
 				EC9231C2172A0CED00F65FC8 /* DataAccess */,
 				EC9231C1172A0CC700F65FC8 /* ViewController */,
 				EC9231C0172A0CB200F65FC8 /* Modal */,
@@ -209,6 +231,27 @@
 				EC1BCBBE17F268C7002D9F77 /* iTunesArtwork@2x.png */,
 			);
 			path = icon;
+			sourceTree = "<group>";
+		};
+		EC4C8F6B18B58C5500BC0C84 /* Vurig Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				EC4C8F7118B58C5500BC0C84 /* NSDate+convenience.h */,
+				EC4C8F7218B58C5500BC0C84 /* NSDate+convenience.m */,
+				EC4C8F7318B58C5500BC0C84 /* NSMutableArray+convenience.h */,
+				EC4C8F7418B58C5500BC0C84 /* NSMutableArray+convenience.m */,
+				EC4C8F7518B58C5500BC0C84 /* UIColor+expanded.h */,
+				EC4C8F7618B58C5500BC0C84 /* UIColor+expanded.m */,
+				EC4C8F7718B58C5500BC0C84 /* UIView+convenience.h */,
+				EC4C8F7818B58C5500BC0C84 /* UIView+convenience.m */,
+				EC4C8F7918B58C5500BC0C84 /* VRGAppDelegate.h */,
+				EC4C8F7A18B58C5500BC0C84 /* VRGAppDelegate.m */,
+				EC4C8F7B18B58C5500BC0C84 /* VRGCalendarView.h */,
+				EC4C8F7C18B58C5500BC0C84 /* VRGCalendarView.m */,
+				EC4C8F7D18B58C5500BC0C84 /* VRGViewController.h */,
+				EC4C8F7E18B58C5500BC0C84 /* VRGViewController.m */,
+			);
+			path = "Vurig Calendar";
 			sourceTree = "<group>";
 		};
 		EC9231C0172A0CB200F65FC8 /* Modal */ = {
@@ -390,16 +433,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC4C8F8718B58C5500BC0C84 /* UIView+convenience.m in Sources */,
 				EC0465881713BB84001B39B2 /* main.m in Sources */,
+				EC4C8F8518B58C5500BC0C84 /* NSMutableArray+convenience.m in Sources */,
+				EC4C8F8A18B58C5500BC0C84 /* VRGViewController.m in Sources */,
 				EC04658C1713BB84001B39B2 /* AppDelegate.m in Sources */,
 				EC65511018B326B70084C8E3 /* ListViewController.m in Sources */,
 				EC0465951713BB84001B39B2 /* MainViewController.m in Sources */,
+				EC4C8F8618B58C5500BC0C84 /* UIColor+expanded.m in Sources */,
 				EC65510D18B321EC0084C8E3 /* HistoryViewController.m in Sources */,
 				EC4C58C918AB795600FD9507 /* GloabalUI.m in Sources */,
 				EC77D9B6171FC20B00E65EC6 /* GoalViewController.m in Sources */,
 				EC1C2CE517210452009FED9C /* SqliteAccess.m in Sources */,
 				EC5BB9E118AC4F650007DB31 /* GlobalNavigationController.m in Sources */,
+				EC4C8F8918B58C5500BC0C84 /* VRGCalendarView.m in Sources */,
 				EC22BC9217291C4B00586493 /* LogItem.m in Sources */,
+				EC4C8F8818B58C5500BC0C84 /* VRGAppDelegate.m in Sources */,
+				EC4C8F8418B58C5500BC0C84 /* NSDate+convenience.m in Sources */,
 				EC65511318B32D050084C8E3 /* CalendarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,13 +26,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.origin.y, 320, self.view.frame.size.height - 64)];
-    label.text = @"calendar";
-    label.textAlignment = UITextAlignmentCenter;
-    label.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:label];
+    
+    VRGCalendarView *calendar = [[VRGCalendarView alloc] init];
+    calendar.delegate = self;
+    [self.view addSubview:calendar];
 }
 
+#pragma mark - Calendar
+-(void)calendarView:(VRGCalendarView *)calendarView dateSelected:(NSDate *)date
+{
+    
+}
+
+-(void)calendarView:(VRGCalendarView *)calendarView switchedToMonth:(int)month targetHeight:(float)targetHeight animated:(BOOL)animated
+{
+    if (month == 2) {
+        NSArray *dates = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:5], nil];
+        [calendarView markDates:dates];
+    }
+}
+
+#pragma mark - Memory Warning
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VRGCalendarView.h"
 
-@interface CalendarViewController : UIViewController
+@interface CalendarViewController : UIViewController <VRGCalendarViewDelegate>
 
 @end
