@@ -30,8 +30,8 @@
 
 -(void) createDatabase
 {
-    [self.database executeUpdate:@"create table log(date date primary key)"];
-    [self.database executeUpdate:@"create table config(name text primary key, value text)"];
+    [self.database executeUpdate:@"create table if not exists log(date date primary key)"];
+    [self.database executeUpdate:@"create table if not exists config(name text primary key, value text)"];
 }
 
 -(void) openDatabase
