@@ -23,7 +23,6 @@
     self.dbAccess = [[SqliteAccess alloc] init];
     [self.dbAccess openDatabase];
     self.dataArray = [self.dbAccess getRecordList];
-    [self.dbAccess closeDatabse];
     
     // header view
     UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
@@ -35,6 +34,8 @@
     [totalLabel setText:[NSString stringWithFormat:@"共完成%u次", [self.dbAccess getTotalRecord]]];
     [headerView addSubview:totalLabel];
     [self.tableView setTableHeaderView:headerView];
+    
+    [self.dbAccess closeDatabse];
 }
 
 - (void)didReceiveMemoryWarning
