@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SqliteAccess.h"
 #import "VRGCalendarView.h"
 
 @interface CalendarViewController : UIViewController <VRGCalendarViewDelegate>
+
+@property (nonatomic, retain) SqliteAccess *dbAccess;
+@property (nonatomic, retain) NSMutableArray *dataArray;
 
 @end

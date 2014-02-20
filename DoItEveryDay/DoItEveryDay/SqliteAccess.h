@@ -22,6 +22,7 @@
 -(void) deleteRecordAtIndex: (NSInteger)index;
 -(void) insertRecord: (NSDate *)date;
 -(NSMutableArray *) getRecordList;
+-(NSMutableArray *) getRecordListForCalendar;
 -(NSUInteger) getProgress;
 
 @end

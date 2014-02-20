@@ -94,6 +94,17 @@
     return dataArray;
 }
 
+-(NSMutableArray *) getRecordListForCalendar
+{
+    NSMutableArray *dataArray = [[NSMutableArray alloc] init];
+    FMResultSet *results = [self.database executeQuery:@"select rowid, * from log order by date desc limit 5"];
+    while([results next]) {
+        [dataArray addObject:[results dateForColumn:@"date"]];
+    }
+    [results close];
+    return dataArray;
+}
+
 -(NSUInteger) getProgress
 {
     NSUInteger count = [self.database intForQuery:@"select count(date) from log where date between ? and ?",

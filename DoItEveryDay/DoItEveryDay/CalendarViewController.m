@@ -14,15 +14,6 @@
 
 @implementation CalendarViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -30,6 +21,12 @@
     VRGCalendarView *calendar = [[VRGCalendarView alloc] init];
     calendar.delegate = self;
     [self.view addSubview:calendar];
+    
+    // database
+    self.dbAccess = [[SqliteAccess alloc] init];
+    [self.dbAccess openDatabase];
+    self.dataArray = [self.dbAccess getRecordListForCalendar];
+    [self.dbAccess closeDatabse];
 }
 
 #pragma mark - Calendar
@@ -40,10 +37,12 @@
 
 -(void)calendarView:(VRGCalendarView *)calendarView switchedToMonth:(int)month targetHeight:(float)targetHeight animated:(BOOL)animated
 {
-    if (month == 2) {
-        NSArray *dates = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:5], nil];
-        [calendarView markDates:dates];
-    }
+//    if (month == 2) {
+//        NSArray *dates = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:5], nil];
+//        [calendarView markDates:dates];
+//    }
+    
+    [calendarView markDates:self.dataArray];
 }
 
 #pragma mark - Memory Warning
