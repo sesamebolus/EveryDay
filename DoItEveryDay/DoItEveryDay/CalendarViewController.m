@@ -34,8 +34,11 @@
 
 -(void)calendarView:(VRGCalendarView *)calendarView switchedToMonth:(int)month targetHeight:(float)targetHeight animated:(BOOL)animated
 {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM"];
+    
     [self.dbAccess openDatabase];
-    self.dataArray = [self.dbAccess getRecordListForMonth:month year:2014];
+    self.dataArray = [self.dbAccess getRecordListForMonth:[dateFormat stringFromDate: calendarView.currentMonth]];
     [calendarView markDates:self.dataArray];
     [self.dbAccess closeDatabse];
 }
