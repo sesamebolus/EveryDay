@@ -24,9 +24,6 @@
     
     // database
     self.dbAccess = [[SqliteAccess alloc] init];
-    [self.dbAccess openDatabase];
-    self.dataArray = [self.dbAccess getRecordListForCalendar];
-    [self.dbAccess closeDatabse];
 }
 
 #pragma mark - Calendar
@@ -37,12 +34,10 @@
 
 -(void)calendarView:(VRGCalendarView *)calendarView switchedToMonth:(int)month targetHeight:(float)targetHeight animated:(BOOL)animated
 {
-//    if (month == 2) {
-//        NSArray *dates = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:5], nil];
-//        [calendarView markDates:dates];
-//    }
-    
+    [self.dbAccess openDatabase];
+    self.dataArray = [self.dbAccess getRecordListForMonth:month year:2014];
     [calendarView markDates:self.dataArray];
+    [self.dbAccess closeDatabse];
 }
 
 #pragma mark - Memory Warning

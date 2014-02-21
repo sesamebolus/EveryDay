@@ -94,12 +94,14 @@
     return dataArray;
 }
 
--(NSMutableArray *) getRecordListForCalendar
+-(NSMutableArray *) getRecordListForMonth:(NSInteger)month year:(NSInteger)year
 {
     NSMutableArray *dataArray = [[NSMutableArray alloc] init];
-    FMResultSet *results = [self.database executeQuery:@"select rowid, * from log order by date desc limit 5"];
+    NSString *monthString = [NSString stringWithFormat: month < 10 ? @"0%d" : @"%d", month];
+    NSString *sqlString = [NSString stringWithFormat:@"select strftime('%%d', date, 'unixepoch', 'localtime') AS dates from log where strftime('%%Y-%%m', date, 'unixepoch', 'localtime') = '%d-%@' order by date desc limit 31", year, monthString];
+    FMResultSet *results = [self.database executeQuery:sqlString];
     while([results next]) {
-        [dataArray addObject:[results dateForColumn:@"date"]];
+        [dataArray addObject:[NSNumber numberWithInt:[results intForColumn:@"dates"]]];
     }
     [results close];
     return dataArray;
