@@ -41,6 +41,7 @@
     UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"日历",@"列表", nil]];
     [segmentControl addTarget:self action:@selector(didChangeSegmentControl:) forControlEvents:UIControlEventValueChanged];
     [segmentControl setSelectedSegmentIndex:0];
+    [segmentControl setFrame:CGRectMake(0, 0, 120, 29)];
     [self.navigationItem setTitleView:segmentControl];
 }
 
