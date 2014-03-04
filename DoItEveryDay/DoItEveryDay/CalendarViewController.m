@@ -18,12 +18,25 @@
 {
     [super viewDidLoad];
     
-    VRGCalendarView *calendar = [[VRGCalendarView alloc] init];
-    calendar.delegate = self;
-    [self.view addSubview:calendar];
+    self.calendar = [[VRGCalendarView alloc] init];
+    self.calendar.delegate = self;
+    [self.view addSubview:self.calendar];
     
     // database
     self.dbAccess = [[SqliteAccess alloc] init];
+    
+    // gesture recognizer
+    UISwipeGestureRecognizer *recognizer;
+	
+	recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+	[recognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
+	[self.calendar addGestureRecognizer:recognizer];
+	recognizer = nil;
+	
+	recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+	[recognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
+	[self.calendar addGestureRecognizer:recognizer];
+	recognizer = nil;
 }
 
 #pragma mark - Calendar
@@ -41,6 +54,18 @@
     self.dataArray = [self.dbAccess getRecordListForMonth:[dateFormat stringFromDate: calendarView.currentMonth]];
     [calendarView markDates:self.dataArray];
     [self.dbAccess closeDatabse];
+}
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
+	if (recognizer.direction == UISwipeGestureRecognizerDirectionDown) {
+        [self.calendar showPreviousMonth];
+        return;
+	}
+    
+	if (recognizer.direction == UISwipeGestureRecognizerDirectionUp) {
+        [self.calendar showNextMonth];
+        return;
+	}
 }
 
 #pragma mark - Memory Warning

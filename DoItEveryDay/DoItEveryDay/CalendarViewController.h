@@ -12,7 +12,8 @@
 
 @interface CalendarViewController : UIViewController <VRGCalendarViewDelegate>
 
-@property (nonatomic, retain) SqliteAccess *dbAccess;
-@property (nonatomic, retain) NSMutableArray *dataArray;
+@property (nonatomic, strong) SqliteAccess *dbAccess;
+@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) VRGCalendarView *calendar;
 
 @end
